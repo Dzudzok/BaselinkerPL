@@ -13,12 +13,12 @@ load_dotenv()
 
 # Konfiguracja
 API_TOKEN = os.environ.get('API_TOKEN')  # Wstaw swój token API BaseLinker jako zmienną środowiskową
-API_URL = "https://api.baselinker.com/connector.php"
-INVENTORY_ID = "bl_1"  # Magazyn BaseLinker (DurczokAPI)
-NEW_INVENTORY_ID = "17695"  # Wstaw poprawny ID nowego katalogu
-PRICE_GROUP_ID = 15432  # ID grupy cenowej CZK (API DurczokCZK)
-REQUESTS_PER_MINUTE = 80  # Limit dla dodawania produktów
-MAX_WORKERS = 5  # Liczba równoległych wątków
+API_URL = os.environ.get('API_URL')
+INVENTORY_ID = os.environ.get('INVENTORY_ID')  # Magazyn BaseLinker (DurczokAPI)
+NEW_INVENTORY_ID = os.environ.get('NEW_INVENTORY_ID')  # Wstaw poprawny ID nowego katalogu
+PRICE_GROUP_ID = os.environ.get('PRICE_GROUP_ID')  # ID grupy cenowej CZK (API DurczokCZK)
+REQUESTS_PER_MINUTE = int(os.environ.get('REQUESTS_PER_MINUTE', 80))  # Limit dla dodawania produktów
+MAX_WORKERS = int(os.environ.get('MAX_WORKERS', 5))  # Liczba równoległych wątków
 BATCH_SIZE = REQUESTS_PER_MINUTE  # Partia produktów na minutę
 BATCH_INTERVAL = 60  # Odstęp między partiami (60 sekund)
 DEFAULT_TAX = 21  # Domyślny VAT (23%)

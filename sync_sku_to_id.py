@@ -10,10 +10,10 @@ load_dotenv()
 
 # Konfiguracja
 API_TOKEN = os.environ.get('API_TOKEN')  # Wstaw swój token API BaseLinker jako zmienną środowiskową
-API_URL = "https://api.baselinker.com/connector.php"
-INVENTORY_ID = "bl_1"  # Poprawny ID magazynu BaseLinker
+API_URL = os.environ.get('API_URL')
+INVENTORY_ID = os.environ.get('INVENTORY_ID')  # Poprawny ID magazynu BaseLinker
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
-REQUESTS_PER_MINUTE = 500  # Limit zapytań na minutę
+REQUESTS_PER_MINUTE = int(os.environ.get('REQUESTS_PER_MINUTE', 80))  # Limit zapytań na minutę
 SLEEP_TIME = 60 / REQUESTS_PER_MINUTE  # Czas między żądaniami (0.12s)
 
 # Konfiguracja logowania

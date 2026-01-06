@@ -13,15 +13,15 @@ load_dotenv()
 
 # Konfiguracja
 API_TOKEN = os.environ.get('API_TOKEN')  # Wstaw swój token API BaseLinker jako zmienną środowiskową
-API_URL = "https://api.baselinker.com/connector.php"
-INVENTORY_ID = "bl_1"  # Poprawny ID magazynu BaseLinker (DurczokAPI), do zmiany na nowy inventory_id
-NEW_INVENTORY_ID = "53214"  # Wstaw ID nowego katalogu z add_new_inventory.py
-PRICE_GROUP_ID = 46532  # ID grupy cenowej CZK (API DurczokCZK)
+API_URL = os.environ.get('API_URL')
+INVENTORY_ID = os.environ.get('INVENTORY_ID')  # Poprawny ID magazynu BaseLinker (DurczokAPI), do zmiany na nowy inventory_id
+NEW_INVENTORY_ID = os.environ.get('NEW_INVENTORY_ID')  # Wstaw ID nowego katalogu z add_new_inventory.py
+PRICE_GROUP_ID = os.environ.get('PRICE_GROUP_ID') # ID grupy cenowej CZK (API DurczokCZK)
 BATCH_SIZE = 1000  # Optymalizacja dla 1000 produktów na zapytanie
-MAX_WORKERS = 10  # Liczba równoległych wątków
-REQUESTS_PER_MINUTE = 480  # Limit dla aktualizacji
+MAX_WORKERS = int(os.environ.get('MAX_WORKERS', 5))  # Liczba równoległych wątków
+REQUESTS_PER_MINUTE = int(os.environ.get('REQUESTS_PER_MINUTE', 80))
 SLEEP_TIME = 60 / (REQUESTS_PER_MINUTE / MAX_WORKERS)  # Czas między żądaniami dla każdego wątku
-DEFAULT_TAX = 23  # Domyślny VAT (23%)
+DEFAULT_TAX = 21
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
 XML_URL = os.environ.get('XML_URL')  # URL do pliku XML
 
