@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
+from urllib.parse import urlparse
 
 load_dotenv()
 
@@ -107,13 +108,23 @@ def get_category_id(inventory_id: str) -> str:
         return "0"
 
 def fetch_and_parse_xml() -> List[Dict]:
-    """Pobiera i parsuje plik XML z podanego URL (ceny w CZK)."""
+    """Pobiera i parsuje plik XML z podanego URL lub ścieżki lokalnej."""
     products = []
     try:
-        # Pobranie XML z URL
-        response = requests.get(XML_URL)
-        response.raise_for_status()  # Sprawdzenie, czy żądanie się powiodło
-        xml_content = response.content.decode("utf-8")
+        if XML_URL.startswith("file://"):
+            # Lokalny plik
+            parsed = urlparse(XML_URL)
+            file_path = parsed.path
+            if os.name == 'nt' and file_path.startswith('/'):
+                file_path = file_path[1:]  # Usuń początkowy / dla Windows
+            with open(file_path, "r", encoding="utf-8") as f:
+                xml_content = f.read()
+        else:
+            # URL
+            response = requests.get(XML_URL)
+            response.raise_for_status()
+            xml_content = response.content.decode('utf-8')
+            xml_content = xml_content.lstrip('\ufeff')  # Usuń BOM jeśli występuje
         
         # Parsowanie XML
         root = ET.fromstring(xml_content)
@@ -183,12 +194,12 @@ def update_product_quantity_in_baselinker(products: List[Dict], storage_id: str,
             print(f"Pomyślnie zaktualizowano stany {len(formatted_products)} produktów.")
             return True
         else:
-            logging.error(f"Błąd API (updateProductsQuantity): {response_data.get('error_message', 'Brak szczegółów błędu')}")
-            print(f"Błąd API (updateProductsQuantity): {response_data.get('error_message', 'Brak szczegółów błędu')}")
+            logging.error(f"Błąd API (updateInventoryProductsStock): {response_data.get('error_message', 'Brak szczegółów błędu')}")
+            print(f"Błąd API (updateInventoryProductsStock): {response_data.get('error_message', 'Brak szczegółów błędu')}")
             return False
     except Exception as e:
-        logging.error(f"Błąd podczas wysyłania żądania (updateProductsQuantity): {str(e)}")
-        print(f"Błąd podczas wysyłania żądania (updateProductsQuantity): {str(e)}")
+        logging.error(f"Błąd podczas wysyłania żądania (updateInventoryProductsStock): {str(e)}")
+        print(f"Błąd podczas wysyłania żądania (updateInventoryProductsStock): {str(e)}")
         return False
 
 def update_product_prices_in_baselinker(products: List[Dict], storage_id: str, sku_to_id: Dict[str, str], inventory_id: str) -> bool:
@@ -232,12 +243,12 @@ def update_product_prices_in_baselinker(products: List[Dict], storage_id: str, s
             print(f"Pomyślnie zaktualizowano ceny {len(formatted_products)} produktów.")
             return True
         else:
-            logging.error(f"Błąd API (updateProductsPrices): {response_data.get('error_message', 'Brak szczegółów błędu')}")
-            print(f"Błąd API (updateProductsPrices): {response_data.get('error_message', 'Brak szczegółów błędu')}")
+            logging.error(f"Błąd API (updateInventoryProductsPrices): {response_data.get('error_message', 'Brak szczegółów błędu')}")
+            print(f"Błąd API (updateInventoryProductsPrices): {response_data.get('error_message', 'Brak szczegółów błędu')}")
             return False
     except Exception as e:
-        logging.error(f"Błąd podczas wysyłania żądania (updateProductsPrices): {str(e)}")
-        print(f"Błąd podczas wysyłania żądania (updateProductsPrices): {str(e)}")
+        logging.error(f"Błąd podczas wysyłania żądania (updateInventoryProductsPrices): {str(e)}")
+        print(f"Błąd podczas wysyłania żądania (updateInventoryProductsPrices): {str(e)}")
         return False
 
 def process_batch(batch: List[Dict], queue: Queue, storage_id: str, sku_to_id: Dict[str, str], inventory_id: str):

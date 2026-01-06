@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor
 from itertools import islice
+from urllib.parse import urlparse
 
 load_dotenv()
 
@@ -137,15 +138,29 @@ def create_category_if_needed(inventory_id: str) -> str:
         return "0"
 
 def fetch_and_parse_xml() -> List[Dict]:
-    """Pobiera i parsuje plik XML z podanego URL (ceny w CZK), formatując nazwę w formacie g:mpn g:brand title."""
+    """Pobiera i parsuje plik XML z podanego URL lub ścieżki lokalnej (ceny w CZK), formatując nazwę w formacie g:mpn g:brand title."""
     products = []
     try:
-        response = requests.get(XML_URL)
-        response.raise_for_status()
-        xml_content = response.content.decode("utf-8")
+        if XML_URL.startswith("file://"):
+            # Lokalny plik
+            parsed = urlparse(XML_URL)
+            file_path = parsed.path
+            if os.name == 'nt' and file_path.startswith('/'):
+                file_path = file_path[1:]  # Usuń początkowy / dla Windows
+            with open(file_path, "r", encoding="utf-8") as f:
+                xml_content = f.read()
+        else:
+            # URL
+            response = requests.get(XML_URL)
+            response.raise_for_status()
+            xml_content = response.content.decode('utf-8')
+            xml_content = xml_content.lstrip('\ufeff')  # Usuń BOM jeśli występuje
         
         root = ET.fromstring(xml_content)
         namespace = {"g": "http://base.google.com/ns/1.0"}
+        
+        logging.info(f"Found {len(root.findall('.//item'))} items in XML")
+        logging.info(f"XML content start: {xml_content[:200]}")
         
         for item in root.findall(".//item"):
             price_czk = float(item.find("g:price", namespace).text) if item.find("g:price", namespace) is not None and item.find("g:price", namespace).text.replace(".", "").isdigit() else 0.0
@@ -153,12 +168,30 @@ def fetch_and_parse_xml() -> List[Dict]:
             brand = (item.find("g:brand", namespace).text if item.find("g:brand", namespace) is not None else "Unknown-Brand").strip()
             title = (item.find("title").text if item.find("title") is not None else "Unknown-Title").strip()
             
+            image_link = ""
+            image_elem = item.find("g:image_link", namespace)
+            if image_elem is not None and image_elem.text:
+                image_link = image_elem.text
+            else:
+                # Sprawdź additional_image_link
+                additional_images = item.findall("g:additional_image_link", namespace)
+                if additional_images and additional_images[0].text:
+                    image_link = additional_images[0].text
+            
+            # Debug log for image
+            logging.info(f"Image element: {image_elem}")
+            if image_elem is not None:
+                logging.info(f"Image text: {image_elem.text}")
+            logging.info(f"Additional images: {len(additional_images) if 'additional_images' in locals() else 0}")
+            if 'additional_images' in locals() and additional_images:
+                logging.info(f"First additional image text: {additional_images[0].text}")
+            
             # Formatowanie nazwy w formacie: g:mpn g:brand title
             formatted_name = f"{mpn} {brand} {title}".strip()
             
             # Logowanie wartości dla debugowania
-            logging.info(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}")
-            print(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}")
+            logging.info(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}, Image={image_link}")
+            print(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}, Image={image_link}")
             
             product = {
                 "sku": mpn,
@@ -168,7 +201,8 @@ def fetch_and_parse_xml() -> List[Dict]:
                 "ean": item.find("g:gtin", namespace).text if item.find("g:gtin", namespace) is not None else "",
                 "man_name": brand,
                 "description": item.find("g:description", namespace).text if item.find("g:description", namespace) is not None else "",
-                "category": item.find("g:product_type", namespace).text if item.find("g:product_type", namespace) is not None else ""
+                "category": item.find("g:product_type", namespace).text if item.find("g:product_type", namespace) is not None else "",
+                "image_link": image_link
             }
             
             products.append(product)
@@ -206,7 +240,8 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
         "category_id": category_id,
         "location": "",
         "weight": 0.0,
-        "price_group_id": PRICE_GROUP_ID
+        "price_group_id": PRICE_GROUP_ID,
+        "images": {"0": f"url:{product['image_link']}"} if product.get("image_link") else {}
     }
     
     # Logowanie pełnego payloadu przed wysłaniem
@@ -258,8 +293,6 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
     except Exception as e:
         logging.error(f"Błąd podczas wysyłania żądania (addProduct) dla SKU {product['sku']}: {str(e)}")
         print(f"Błąd podczas wysyłania żądania (addProduct) dla SKU {product['sku']}: {str(e)}")
-        return False
-
 def add_products_from_xml():
     """Główna funkcja dodawania produktów z pliku XML online (ceny w CZK) z użyciem partii."""
     load_sku_to_id()
