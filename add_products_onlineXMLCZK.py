@@ -159,39 +159,21 @@ def fetch_and_parse_xml() -> List[Dict]:
         root = ET.fromstring(xml_content)
         namespace = {"g": "http://base.google.com/ns/1.0"}
         
-        logging.info(f"Found {len(root.findall('.//item'))} items in XML")
-        logging.info(f"XML content start: {xml_content[:200]}")
-        
         for item in root.findall(".//item"):
             price_czk = float(item.find("g:price", namespace).text) if item.find("g:price", namespace) is not None and item.find("g:price", namespace).text.replace(".", "").isdigit() else 0.0
             mpn = (item.find("g:mpn", namespace).text if item.find("g:mpn", namespace) is not None else "Unknown-MPN").strip()
             brand = (item.find("g:brand", namespace).text if item.find("g:brand", namespace) is not None else "Unknown-Brand").strip()
             title = (item.find("title").text if item.find("title") is not None else "Unknown-Title").strip()
             
-            image_link = ""
-            image_elem = item.find("g:image_link", namespace)
-            if image_elem is not None and image_elem.text:
-                image_link = image_elem.text
-            else:
-                # Sprawdź additional_image_link
-                additional_images = item.findall("g:additional_image_link", namespace)
-                if additional_images and additional_images[0].text:
-                    image_link = additional_images[0].text
-            
-            # Debug log for image
-            logging.info(f"Image element: {image_elem}")
-            if image_elem is not None:
-                logging.info(f"Image text: {image_elem.text}")
-            logging.info(f"Additional images: {len(additional_images) if 'additional_images' in locals() else 0}")
-            if 'additional_images' in locals() and additional_images:
-                logging.info(f"First additional image text: {additional_images[0].text}")
+            img_elem = item.find("g:image_link", namespace)
+            img = img_elem.text.strip() if img_elem is not None and img_elem.text else ""
+            image_link = img
             
             # Formatowanie nazwy w formacie: g:mpn g:brand title
             formatted_name = f"{mpn} {brand} {title}".strip()
             
             # Logowanie wartości dla debugowania
             logging.info(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}, Image={image_link}")
-            print(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}, Image={image_link}")
             
             product = {
                 "sku": mpn,
@@ -207,8 +189,8 @@ def fetch_and_parse_xml() -> List[Dict]:
             
             products.append(product)
         
-        logging.info(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK).")
-        print(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK).")
+        logging.info(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK) (ograniczone do 1000 dla testów).")
+        print(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK) (ograniczone do 1000 dla testów).")
         return products
     except requests.exceptions.RequestException as e:
         logging.error(f"Błąd podczas pobierania XML z URL {XML_URL}: {str(e)}")
@@ -239,7 +221,7 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
         "description": product["description"],
         "category_id": category_id,
         "location": "",
-        "weight": 0.0,
+        "weight": 1.0,
         "price_group_id": PRICE_GROUP_ID,
         "images": {"0": f"url:{product['image_link']}"} if product.get("image_link") else {}
     }
