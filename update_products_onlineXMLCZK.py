@@ -4,12 +4,15 @@ import time
 import json
 import logging
 import os
+from dotenv import load_dotenv
 from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 
+load_dotenv()
+
 # Konfiguracja
-API_TOKEN = "3007084-3028072-5KCONQEJOMDU02OJ8U06VM5NWAVBXURMHZ6OF0HVTRQMMGMNWIOF3L171TPYCBV3"  # Wstaw swój token API BaseLinker
+API_TOKEN = os.environ.get('API_TOKEN')  # Wstaw swój token API BaseLinker jako zmienną środowiskową
 API_URL = "https://api.baselinker.com/connector.php"
 INVENTORY_ID = "bl_1"  # Poprawny ID magazynu BaseLinker (DurczokAPI), do zmiany na nowy inventory_id
 NEW_INVENTORY_ID = "53214"  # Wstaw ID nowego katalogu z add_new_inventory.py
