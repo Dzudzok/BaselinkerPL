@@ -23,7 +23,7 @@ BATCH_SIZE = REQUESTS_PER_MINUTE  # Partia produktów na minutę
 BATCH_INTERVAL = 60  # Odstęp między partiami (60 sekund)
 DEFAULT_TAX = 23  # Domyślny VAT (23%)
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
-XML_URL = "https://exports.conviu.com/open/u70usd1xo1y5fknhd1xm8kixkdsya8po/writer/ciqcxhu8d7sgvbmnhxntf95okkk7bhd6.xml"  # URL do pliku XML
+XML_URL = os.environ.get('XML_URL')  # URL do pliku XML
 PAUSE_DURATION = 360  # 12 minut w sekundach
 
 # Konfiguracja logowania

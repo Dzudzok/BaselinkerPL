@@ -23,7 +23,7 @@ REQUESTS_PER_MINUTE = 480  # Limit dla aktualizacji
 SLEEP_TIME = 60 / (REQUESTS_PER_MINUTE / MAX_WORKERS)  # Czas między żądaniami dla każdego wątku
 DEFAULT_TAX = 23  # Domyślny VAT (23%)
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
-XML_URL = "https://exports.conviu.com/open/u70usd1xo1y5fknhd1xm8kixkdsya8po/writer/ciqcxhu8d7sgvbmnhxntf95okkk7bhd6.xml"  # URL do pliku XML
+XML_URL = os.environ.get('XML_URL')  # URL do pliku XML
 
 # Konfiguracja logowania
 logging.basicConfig(
