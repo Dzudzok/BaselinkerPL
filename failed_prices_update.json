@@ -1,0 +1,4002 @@
+[
+  {
+    "sku": "LORO_1601M01",
+    "price_brutto": 1173.6
+  },
+  {
+    "sku": "LORO_1601M03",
+    "price_brutto": 1186.57
+  },
+  {
+    "sku": "A.B.S._1601Q",
+    "price_brutto": 98.31
+  },
+  {
+    "sku": "LIQUI MOLY_1602",
+    "price_brutto": 158.68
+  },
+  {
+    "sku": "COFLE_1602.14",
+    "price_brutto": 187.29
+  },
+  {
+    "sku": "A.B.S._16020",
+    "price_brutto": 1549.6
+  },
+  {
+    "sku": "AJUSA_16020800",
+    "price_brutto": 4.73
+  },
+  {
+    "sku": "A.B.S._16021",
+    "price_brutto": 1676.9
+  },
+  {
+    "sku": "FEBI BILSTEIN_16021",
+    "price_brutto": 661.83
+  },
+  {
+    "sku": "KILEN_16021",
+    "price_brutto": 1079.65
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16021",
+    "price_brutto": 185.44
+  },
+  {
+    "sku": "AJUSA_16021400",
+    "price_brutto": 6.95
+  },
+  {
+    "sku": "AJUSA_16021500",
+    "price_brutto": 24.31
+  },
+  {
+    "sku": "A.B.S._16022",
+    "price_brutto": 1554.72
+  },
+  {
+    "sku": "AJUSA_16022000",
+    "price_brutto": 13.67
+  },
+  {
+    "sku": "AJUSA_16022400",
+    "price_brutto": 5.77
+  },
+  {
+    "sku": "A.B.S._16023",
+    "price_brutto": 1871.92
+  },
+  {
+    "sku": "AJUSA_16023100",
+    "price_brutto": 8.08
+  },
+  {
+    "sku": "AJUSA_16023200",
+    "price_brutto": 30.41
+  },
+  {
+    "sku": "HC-CARGO_160239",
+    "price_brutto": 273.75
+  },
+  {
+    "sku": "HC-CARGO_160242",
+    "price_brutto": 364.36
+  },
+  {
+    "sku": "HC-CARGO_160243",
+    "price_brutto": 510.32
+  },
+  {
+    "sku": "AJUSA_16024400",
+    "price_brutto": 4.73
+  },
+  {
+    "sku": "KILEN_16025",
+    "price_brutto": 1289.87
+  },
+  {
+    "sku": "HC-CARGO_160253",
+    "price_brutto": 2612.31
+  },
+  {
+    "sku": "FEBI BILSTEIN_16026",
+    "price_brutto": 660.01
+  },
+  {
+    "sku": "KILEN_16026",
+    "price_brutto": 1553.81
+  },
+  {
+    "sku": "HC-CARGO_160266",
+    "price_brutto": 131.4
+  },
+  {
+    "sku": "AJUSA_16026900",
+    "price_brutto": 8.64
+  },
+  {
+    "sku": "A.B.S._16027",
+    "price_brutto": 2980.06
+  },
+  {
+    "sku": "FEBI BILSTEIN_16027",
+    "price_brutto": 497.49
+  },
+  {
+    "sku": "HC-CARGO_160271",
+    "price_brutto": 150.76
+  },
+  {
+    "sku": "HC-CARGO_160272",
+    "price_brutto": 565.89
+  },
+  {
+    "sku": "AJUSA_16027800",
+    "price_brutto": 54.02
+  },
+  {
+    "sku": "FEBI BILSTEIN_16028",
+    "price_brutto": 542.99
+  },
+  {
+    "sku": "AJUSA_16029000",
+    "price_brutto": 10.5
+  },
+  {
+    "sku": "HC-CARGO_160295",
+    "price_brutto": 149.49
+  },
+  {
+    "sku": "HC-CARGO_160297",
+    "price_brutto": 352.05
+  },
+  {
+    "sku": "A.B.S._1602Q",
+    "price_brutto": 145.44
+  },
+  {
+    "sku": "LIQUI MOLY_1603",
+    "price_brutto": 240.55
+  },
+  {
+    "sku": "FEBEST_1603-001",
+    "price_brutto": 41.55
+  },
+  {
+    "sku": "FEBEST_1603-W906F",
+    "price_brutto": 103.23
+  },
+  {
+    "sku": "A.B.S._16030",
+    "price_brutto": 2629.74
+  },
+  {
+    "sku": "FEBI BILSTEIN_16030",
+    "price_brutto": 448.52
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16030",
+    "price_brutto": 647.52
+  },
+  {
+    "sku": "HC-CARGO_160308",
+    "price_brutto": 154.41
+  },
+  {
+    "sku": "FEBI BILSTEIN_16031",
+    "price_brutto": 566.52
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16031",
+    "price_brutto": 615.46
+  },
+  {
+    "sku": "HC-CARGO_160314",
+    "price_brutto": 500.0
+  },
+  {
+    "sku": "HC-CARGO_160315",
+    "price_brutto": 341.93
+  },
+  {
+    "sku": "HC-CARGO_160317",
+    "price_brutto": 160.4
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16032",
+    "price_brutto": 366.46
+  },
+  {
+    "sku": "AJUSA_16032100",
+    "price_brutto": 15.89
+  },
+  {
+    "sku": "AJUSA_16032500",
+    "price_brutto": 10.04
+  },
+  {
+    "sku": "A.B.S._16033",
+    "price_brutto": 1183.62
+  },
+  {
+    "sku": "FEBI BILSTEIN_16033",
+    "price_brutto": 506.28
+  },
+  {
+    "sku": "AJUSA_16033200",
+    "price_brutto": 9.29
+  },
+  {
+    "sku": "AJUSA_16033800",
+    "price_brutto": 22.85
+  },
+  {
+    "sku": "KILEN_16034",
+    "price_brutto": 841.95
+  },
+  {
+    "sku": "FEBI BILSTEIN_16035",
+    "price_brutto": 694.81
+  },
+  {
+    "sku": "KILEN_16036",
+    "price_brutto": 1070.26
+  },
+  {
+    "sku": "METALCAUCHO_16036",
+    "price_brutto": 645.76
+  },
+  {
+    "sku": "HC-CARGO_160363",
+    "price_brutto": 140.86
+  },
+  {
+    "sku": "HC-CARGO_160366",
+    "price_brutto": 159.67
+  },
+  {
+    "sku": "HC-CARGO_160368",
+    "price_brutto": 127.53
+  },
+  {
+    "sku": "FEBI BILSTEIN_16037",
+    "price_brutto": 467.48
+  },
+  {
+    "sku": "A.B.S._16038",
+    "price_brutto": 1614.96
+  },
+  {
+    "sku": "FEBI BILSTEIN_16038",
+    "price_brutto": 408.82
+  },
+  {
+    "sku": "HC-CARGO_160380",
+    "price_brutto": 178.03
+  },
+  {
+    "sku": "HC-CARGO_160381",
+    "price_brutto": 191.47
+  },
+  {
+    "sku": "HC-CARGO_160386",
+    "price_brutto": 201.88
+  },
+  {
+    "sku": "A.B.S._16039",
+    "price_brutto": 963.38
+  },
+  {
+    "sku": "FEBI BILSTEIN_16039",
+    "price_brutto": 480.41
+  },
+  {
+    "sku": "HC-CARGO_160394",
+    "price_brutto": 261.65
+  },
+  {
+    "sku": "LIQUI MOLY_1604",
+    "price_brutto": 326.45
+  },
+  {
+    "sku": "SASIC_1604002",
+    "price_brutto": 378.02
+  },
+  {
+    "sku": "HC-CARGO_160403",
+    "price_brutto": 133.75
+  },
+  {
+    "sku": "A.B.S._16041",
+    "price_brutto": 2027.2
+  },
+  {
+    "sku": "HC-CARGO_160413",
+    "price_brutto": 31.55
+  },
+  {
+    "sku": "FEBI BILSTEIN_16042",
+    "price_brutto": 365.61
+  },
+  {
+    "sku": "HC-CARGO_160420",
+    "price_brutto": 638.86
+  },
+  {
+    "sku": "HC-CARGO_245603",
+    "price_brutto": 2066.37
+  },
+  {
+    "sku": "VAN WEZEL_1604261",
+    "price_brutto": 891.83
+  },
+  {
+    "sku": "VAN WEZEL_1604262",
+    "price_brutto": 882.88
+  },
+  {
+    "sku": "KILEN_16043",
+    "price_brutto": 1065.09
+  },
+  {
+    "sku": "HC-CARGO_160432",
+    "price_brutto": 1167.89
+  },
+  {
+    "sku": "A.B.S._16044",
+    "price_brutto": 2024.24
+  },
+  {
+    "sku": "FEBI BILSTEIN_16044",
+    "price_brutto": 429.32
+  },
+  {
+    "sku": "A.B.S._16045",
+    "price_brutto": 2091.18
+  },
+  {
+    "sku": "FEBI BILSTEIN_16045",
+    "price_brutto": 413.2
+  },
+  {
+    "sku": "KILEN_16045",
+    "price_brutto": 1041.25
+  },
+  {
+    "sku": "HC-CARGO_160451",
+    "price_brutto": 1352.52
+  },
+  {
+    "sku": "A.B.S._16046",
+    "price_brutto": 989.76
+  },
+  {
+    "sku": "KILEN_16046",
+    "price_brutto": 1921.1
+  },
+  {
+    "sku": "HC-CARGO_160468",
+    "price_brutto": 232.34
+  },
+  {
+    "sku": "A.B.S._16047",
+    "price_brutto": 853.08
+  },
+  {
+    "sku": "HC-CARGO_160474",
+    "price_brutto": 403.08
+  },
+  {
+    "sku": "HC-CARGO_160477",
+    "price_brutto": 430.79
+  },
+  {
+    "sku": "A.B.S._16048",
+    "price_brutto": 1389.66
+  },
+  {
+    "sku": "FEBI BILSTEIN_16048",
+    "price_brutto": 431.4
+  },
+  {
+    "sku": "HC-CARGO_160480",
+    "price_brutto": 214.52
+  },
+  {
+    "sku": "A.B.S._16049",
+    "price_brutto": 1172.54
+  },
+  {
+    "sku": "FEBI BILSTEIN_16049",
+    "price_brutto": 721.84
+  },
+  {
+    "sku": "KILEN_16049",
+    "price_brutto": 1040.76
+  },
+  {
+    "sku": "A.B.S._1604Q",
+    "price_brutto": 103.66
+  },
+  {
+    "sku": "FEBI BILSTEIN_16051",
+    "price_brutto": 551.89
+  },
+  {
+    "sku": "HC-CARGO_160521",
+    "price_brutto": 156.69
+  },
+  {
+    "sku": "A.B.S._16053",
+    "price_brutto": 721.94
+  },
+  {
+    "sku": "LEMFORDER_16053 02",
+    "price_brutto": 262.04
+  },
+  {
+    "sku": "HC-CARGO_160533",
+    "price_brutto": 55.9
+  },
+  {
+    "sku": "HC-CARGO_160535",
+    "price_brutto": 181.47
+  },
+  {
+    "sku": "HC-CARGO_160537",
+    "price_brutto": 4883.26
+  },
+  {
+    "sku": "A.B.S._16054",
+    "price_brutto": 1198.94
+  },
+  {
+    "sku": "AJUSA_16054000",
+    "price_brutto": 21.44
+  },
+  {
+    "sku": "A.B.S._16055",
+    "price_brutto": 2025.46
+  },
+  {
+    "sku": "FEBI BILSTEIN_16055",
+    "price_brutto": 366.9
+  },
+  {
+    "sku": "AJUSA_16055300",
+    "price_brutto": 62.95
+  },
+  {
+    "sku": "A.B.S._16056",
+    "price_brutto": 1418.8
+  },
+  {
+    "sku": "LEMFORDER_16056 02",
+    "price_brutto": 124.66
+  },
+  {
+    "sku": "AJUSA_16056800",
+    "price_brutto": 2.14
+  },
+  {
+    "sku": "FEBI BILSTEIN_16057",
+    "price_brutto": 427.11
+  },
+  {
+    "sku": "AJUSA_16057900",
+    "price_brutto": 15.22
+  },
+  {
+    "sku": "A.B.S._16058",
+    "price_brutto": 1265.24
+  },
+  {
+    "sku": "FEBI BILSTEIN_16058",
+    "price_brutto": 532.5
+  },
+  {
+    "sku": "LEMFORDER_16058 01",
+    "price_brutto": 124.29
+  },
+  {
+    "sku": "AJUSA_16058800",
+    "price_brutto": 16.59
+  },
+  {
+    "sku": "AJUSA_16058900",
+    "price_brutto": 27.32
+  },
+  {
+    "sku": "A.B.S._16058C",
+    "price_brutto": 2044.8
+  },
+  {
+    "sku": "A.B.S._16059",
+    "price_brutto": 1085.12
+  },
+  {
+    "sku": "HC-CARGO_160598",
+    "price_brutto": 2396.79
+  },
+  {
+    "sku": "A.B.S._1605Q",
+    "price_brutto": 103.02
+  },
+  {
+    "sku": "A.B.S._16061",
+    "price_brutto": 1482.24
+  },
+  {
+    "sku": "FEBI BILSTEIN_16061",
+    "price_brutto": 388.37
+  },
+  {
+    "sku": "A.B.S._16062",
+    "price_brutto": 873.02
+  },
+  {
+    "sku": "FEBI BILSTEIN_16062",
+    "price_brutto": 1033.99
+  },
+  {
+    "sku": "HC-CARGO_160622",
+    "price_brutto": 2005.7
+  },
+  {
+    "sku": "HC-CARGO_160626",
+    "price_brutto": 1894.68
+  },
+  {
+    "sku": "HC-CARGO_160629",
+    "price_brutto": 179.41
+  },
+  {
+    "sku": "A.B.S._16063",
+    "price_brutto": 1222.18
+  },
+  {
+    "sku": "HC-CARGO_160630",
+    "price_brutto": 297.72
+  },
+  {
+    "sku": "AJUSA_16063100",
+    "price_brutto": 19.42
+  },
+  {
+    "sku": "A.B.S._16064",
+    "price_brutto": 953.96
+  },
+  {
+    "sku": "HC-CARGO_160641",
+    "price_brutto": 40.08
+  },
+  {
+    "sku": "A.B.S._16065",
+    "price_brutto": 721.94
+  },
+  {
+    "sku": "HC-CARGO_160651",
+    "price_brutto": 508.45
+  },
+  {
+    "sku": "HC-CARGO_160652",
+    "price_brutto": 132.44
+  },
+  {
+    "sku": "A.B.S._16066",
+    "price_brutto": 1257.14
+  },
+  {
+    "sku": "FEBI BILSTEIN_16066",
+    "price_brutto": 516.17
+  },
+  {
+    "sku": "HART_160 662",
+    "price_brutto": 259.67
+  },
+  {
+    "sku": "FEBI BILSTEIN_16067",
+    "price_brutto": 600.1
+  },
+  {
+    "sku": "HC-CARGO_160677",
+    "price_brutto": 156.43
+  },
+  {
+    "sku": "A.B.S._16068",
+    "price_brutto": 927.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16068",
+    "price_brutto": 334.97
+  },
+  {
+    "sku": "A.B.S._16069",
+    "price_brutto": 1293.92
+  },
+  {
+    "sku": "A.B.S._1606Q",
+    "price_brutto": 114.91
+  },
+  {
+    "sku": "A.B.S._16070",
+    "price_brutto": 1484.18
+  },
+  {
+    "sku": "A.B.S._16071",
+    "price_brutto": 3475.88
+  },
+  {
+    "sku": "FEBI BILSTEIN_16072",
+    "price_brutto": 405.68
+  },
+  {
+    "sku": "HC-CARGO_160720",
+    "price_brutto": 1264.25
+  },
+  {
+    "sku": "AJUSA_16072400",
+    "price_brutto": 15.03
+  },
+  {
+    "sku": "AJUSA_16072500",
+    "price_brutto": 18.01
+  },
+  {
+    "sku": "AJUSA_16072600",
+    "price_brutto": 34.24
+  },
+  {
+    "sku": "AJUSA_16072700",
+    "price_brutto": 15.22
+  },
+  {
+    "sku": "AJUSA_16073100",
+    "price_brutto": 19.64
+  },
+  {
+    "sku": "AJUSA_16073300",
+    "price_brutto": 4.37
+  },
+  {
+    "sku": "AJUSA_16073600",
+    "price_brutto": 110.01
+  },
+  {
+    "sku": "A.B.S._16074",
+    "price_brutto": 1093.98
+  },
+  {
+    "sku": "AJUSA_16074700",
+    "price_brutto": 44.72
+  },
+  {
+    "sku": "A.B.S._16075",
+    "price_brutto": 2461.6
+  },
+  {
+    "sku": "AJUSA_16075800",
+    "price_brutto": 15.15
+  },
+  {
+    "sku": "FEBI BILSTEIN_16076",
+    "price_brutto": 296.17
+  },
+  {
+    "sku": "HC-CARGO_160769",
+    "price_brutto": 560.26
+  },
+  {
+    "sku": "FEBI BILSTEIN_16077",
+    "price_brutto": 244.74
+  },
+  {
+    "sku": "A.B.S._16078",
+    "price_brutto": 1196.9
+  },
+  {
+    "sku": "AJUSA_16078100",
+    "price_brutto": 85.48
+  },
+  {
+    "sku": "AJUSA_16078700",
+    "price_brutto": 88.76
+  },
+  {
+    "sku": "AJUSA_16078800",
+    "price_brutto": 32.47
+  },
+  {
+    "sku": "FEBI BILSTEIN_16079",
+    "price_brutto": 408.65
+  },
+  {
+    "sku": "AJUSA_16079300",
+    "price_brutto": 35.94
+  },
+  {
+    "sku": "AJUSA_16079400",
+    "price_brutto": 27.01
+  },
+  {
+    "sku": "AJUSA_16079700",
+    "price_brutto": 38.95
+  },
+  {
+    "sku": "AJUSA_16079800",
+    "price_brutto": 53.78
+  },
+  {
+    "sku": "AJUSA_16079900",
+    "price_brutto": 69.47
+  },
+  {
+    "sku": "A.B.S._1607Q",
+    "price_brutto": 114.91
+  },
+  {
+    "sku": "A.B.S._16080",
+    "price_brutto": 1223.26
+  },
+  {
+    "sku": "METALCAUCHO_16080",
+    "price_brutto": 744.62
+  },
+  {
+    "sku": "AJUSA_16080100",
+    "price_brutto": 128.49
+  },
+  {
+    "sku": "AJUSA_16080200",
+    "price_brutto": 38.11
+  },
+  {
+    "sku": "A.B.S._16081",
+    "price_brutto": 1105.4
+  },
+  {
+    "sku": "AJUSA_16081500",
+    "price_brutto": 80.68
+  },
+  {
+    "sku": "A.B.S._16082",
+    "price_brutto": 1157.6
+  },
+  {
+    "sku": "FEBI BILSTEIN_16082",
+    "price_brutto": 238.02
+  },
+  {
+    "sku": "AJUSA_16082000",
+    "price_brutto": 115.25
+  },
+  {
+    "sku": "AJUSA_16082100",
+    "price_brutto": 14.31
+  },
+  {
+    "sku": "A.B.S._16083",
+    "price_brutto": 1424.9
+  },
+  {
+    "sku": "A.B.S._16084",
+    "price_brutto": 1019.28
+  },
+  {
+    "sku": "FEBI BILSTEIN_16084",
+    "price_brutto": 246.82
+  },
+  {
+    "sku": "A.B.S._16085",
+    "price_brutto": 1398.16
+  },
+  {
+    "sku": "A.B.S._16086",
+    "price_brutto": 1101.34
+  },
+  {
+    "sku": "A.B.S._16087",
+    "price_brutto": 1091.22
+  },
+  {
+    "sku": "AJUSA_16087500",
+    "price_brutto": 127.94
+  },
+  {
+    "sku": "A.B.S._16088",
+    "price_brutto": 799.96
+  },
+  {
+    "sku": "AJUSA_16088000",
+    "price_brutto": 87.51
+  },
+  {
+    "sku": "A.B.S._16089",
+    "price_brutto": 1126.08
+  },
+  {
+    "sku": "FEBI BILSTEIN_16089",
+    "price_brutto": 422.61
+  },
+  {
+    "sku": "A.B.S._1608Q",
+    "price_brutto": 232.68
+  },
+  {
+    "sku": "A.B.S._16090",
+    "price_brutto": 774.72
+  },
+  {
+    "sku": "A.B.S._16091",
+    "price_brutto": 1516.88
+  },
+  {
+    "sku": "FEBI BILSTEIN_16091",
+    "price_brutto": 474.32
+  },
+  {
+    "sku": "AJUSA_16091100",
+    "price_brutto": 84.83
+  },
+  {
+    "sku": "A.B.S._16092",
+    "price_brutto": 1018.16
+  },
+  {
+    "sku": "HC-CARGO_160920",
+    "price_brutto": 225.34
+  },
+  {
+    "sku": "HC-CARGO_160922",
+    "price_brutto": 676.25
+  },
+  {
+    "sku": "AJUSA_16092400",
+    "price_brutto": 36.66
+  },
+  {
+    "sku": "AJUSA_16092500",
+    "price_brutto": 30.21
+  },
+  {
+    "sku": "A.B.S._16093",
+    "price_brutto": 1137.5
+  },
+  {
+    "sku": "FEBI BILSTEIN_16093",
+    "price_brutto": 474.44
+  },
+  {
+    "sku": "HC-CARGO_160937",
+    "price_brutto": 221.34
+  },
+  {
+    "sku": "A.B.S._16094",
+    "price_brutto": 1263.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16094",
+    "price_brutto": 532.1
+  },
+  {
+    "sku": "HC-CARGO_160941",
+    "price_brutto": 605.38
+  },
+  {
+    "sku": "HC-CARGO_160947",
+    "price_brutto": 183.43
+  },
+  {
+    "sku": "A.B.S._16095",
+    "price_brutto": 2783.9
+  },
+  {
+    "sku": "FEBI BILSTEIN_16095",
+    "price_brutto": 718.94
+  },
+  {
+    "sku": "AJUSA_16095500",
+    "price_brutto": 220.68
+  },
+  {
+    "sku": "HC-CARGO_160957",
+    "price_brutto": 721.66
+  },
+  {
+    "sku": "A.B.S._16096",
+    "price_brutto": 1175.88
+  },
+  {
+    "sku": "FEBI BILSTEIN_16096",
+    "price_brutto": 686.71
+  },
+  {
+    "sku": "A.B.S._16097",
+    "price_brutto": 1169.06
+  },
+  {
+    "sku": "HC-CARGO_160974",
+    "price_brutto": 92.24
+  },
+  {
+    "sku": "HC-CARGO_160977",
+    "price_brutto": 162.17
+  },
+  {
+    "sku": "A.B.S._16098",
+    "price_brutto": 1269.58
+  },
+  {
+    "sku": "HC-CARGO_160984",
+    "price_brutto": 3704.97
+  },
+  {
+    "sku": "A.B.S._16099",
+    "price_brutto": 744.64
+  },
+  {
+    "sku": "A.B.S._1609Q",
+    "price_brutto": 73.79
+  },
+  {
+    "sku": "ASHIKA_161-00-0100",
+    "price_brutto": 1209.21
+  },
+  {
+    "sku": "ASHIKA_161-00-0300",
+    "price_brutto": 1228.81
+  },
+  {
+    "sku": "ASHIKA_161-00-0301",
+    "price_brutto": 1217.84
+  },
+  {
+    "sku": "ASHIKA_161-00-0400",
+    "price_brutto": 1220.6
+  },
+  {
+    "sku": "ASHIKA_161-00-0502",
+    "price_brutto": 1180.7
+  },
+  {
+    "sku": "ASHIKA_161-00-0504",
+    "price_brutto": 1180.7
+  },
+  {
+    "sku": "ASHIKA_161-00-0600",
+    "price_brutto": 1245.83
+  },
+  {
+    "sku": "ASHIKA_161-00-0601",
+    "price_brutto": 995.86
+  },
+  {
+    "sku": "ASHIKA_161-00-0700",
+    "price_brutto": 1032.91
+  },
+  {
+    "sku": "ASHIKA_161-00-0701",
+    "price_brutto": 1196.8
+  },
+  {
+    "sku": "ASHIKA_161-00-0702",
+    "price_brutto": 1111.46
+  },
+  {
+    "sku": "ASHIKA_161-00-0703",
+    "price_brutto": 1222.14
+  },
+  {
+    "sku": "ASHIKA_161-00-0704",
+    "price_brutto": 1148.19
+  },
+  {
+    "sku": "ASHIKA_161-00-0705",
+    "price_brutto": 1200.29
+  },
+  {
+    "sku": "ASHIKA_161-00-0706",
+    "price_brutto": 1188.19
+  },
+  {
+    "sku": "ASHIKA_161-00-0707",
+    "price_brutto": 1287.79
+  },
+  {
+    "sku": "ASHIKA_161-00-0900",
+    "price_brutto": 1187.06
+  },
+  {
+    "sku": "ASHIKA_161-00-0901",
+    "price_brutto": 1218.45
+  },
+  {
+    "sku": "ASHIKA_161-00-0902",
+    "price_brutto": 1285.43
+  },
+  {
+    "sku": "ASHIKA_161-00-0903",
+    "price_brutto": 1263.37
+  },
+  {
+    "sku": "ASHIKA_161-00-0904",
+    "price_brutto": 1221.94
+  },
+  {
+    "sku": "ASHIKA_161-00-0906",
+    "price_brutto": 1225.73
+  },
+  {
+    "sku": "ASHIKA_161-00-0907",
+    "price_brutto": 1252.8
+  },
+  {
+    "sku": "ASHIKA_161-00-0909",
+    "price_brutto": 1249.93
+  },
+  {
+    "sku": "ASHIKA_161-00-0910",
+    "price_brutto": 1226.35
+  },
+  {
+    "sku": "ASHIKA_161-00-0911",
+    "price_brutto": 1254.03
+  },
+  {
+    "sku": "ASHIKA_161-00-0912",
+    "price_brutto": 1285.43
+  },
+  {
+    "sku": "ASHIKA_161-00-0913",
+    "price_brutto": 1285.43
+  },
+  {
+    "sku": "ASHIKA_161-00-0914",
+    "price_brutto": 1248.9
+  },
+  {
+    "sku": "ASHIKA_161-00-0915",
+    "price_brutto": 1336.3
+  },
+  {
+    "sku": "ASHIKA_161-00-0916",
+    "price_brutto": 1219.99
+  },
+  {
+    "sku": "ASHIKA_161-00-0917",
+    "price_brutto": 1242.04
+  },
+  {
+    "sku": "ASHIKA_161-00-0918",
+    "price_brutto": 1220.49
+  },
+  {
+    "sku": "ASHIKA_161-00-0919",
+    "price_brutto": 1247.78
+  },
+  {
+    "sku": "ASHIKA_161-00-0920",
+    "price_brutto": 1247.99
+  },
+  {
+    "sku": "ASHIKA_161-00-0921",
+    "price_brutto": 1285.43
+  },
+  {
+    "sku": "ASHIKA_161-00-0922",
+    "price_brutto": 1254.03
+  },
+  {
+    "sku": "ASHIKA_161-00-0923",
+    "price_brutto": 1267.78
+  },
+  {
+    "sku": "ASHIKA_161-00-0947",
+    "price_brutto": 1180.7
+  },
+  {
+    "sku": "CAFFARO_161-54",
+    "price_brutto": 191.69
+  },
+  {
+    "sku": "ELRING_161.100",
+    "price_brutto": 405.01
+  },
+  {
+    "sku": "ELRING_161.300",
+    "price_brutto": 18.58
+  },
+  {
+    "sku": "ELRING_161.310",
+    "price_brutto": 3179.84
+  },
+  {
+    "sku": "ELRING_161.680",
+    "price_brutto": 3563.71
+  },
+  {
+    "sku": "ELRING_161.829",
+    "price_brutto": 1868.23
+  },
+  {
+    "sku": "ELRING_161.834",
+    "price_brutto": 1490.73
+  },
+  {
+    "sku": "ELRING_161.840",
+    "price_brutto": 422.05
+  },
+  {
+    "sku": "FEBEST_1610-163A48",
+    "price_brutto": 906.82
+  },
+  {
+    "sku": "FEBEST_1610-164",
+    "price_brutto": 1833.65
+  },
+  {
+    "sku": "FEBEST_1610-164R",
+    "price_brutto": 2837.5
+  },
+  {
+    "sku": "FEBEST_1610-164S",
+    "price_brutto": 2330.13
+  },
+  {
+    "sku": "FEBEST_1610-169",
+    "price_brutto": 1760.6
+  },
+  {
+    "sku": "FEBEST_1610-203",
+    "price_brutto": 1776.76
+  },
+  {
+    "sku": "FEBEST_1610-210A48",
+    "price_brutto": 1049.05
+  },
+  {
+    "sku": "FEBEST_1610-220A48",
+    "price_brutto": 2252.47
+  },
+  {
+    "sku": "FEBEST_1610-221",
+    "price_brutto": 2322.96
+  },
+  {
+    "sku": "FEBEST_1610-460A54",
+    "price_brutto": 1271.05
+  },
+  {
+    "sku": "FEBEST_1610-463A48",
+    "price_brutto": 6911.49
+  },
+  {
+    "sku": "FEBEST_1610-639",
+    "price_brutto": 1654.77
+  },
+  {
+    "sku": "FEBEST_1610-801A48",
+    "price_brutto": 1548.9
+  },
+  {
+    "sku": "A.B.S._16100",
+    "price_brutto": 911.92
+  },
+  {
+    "sku": "FAE_16100",
+    "price_brutto": 855.28
+  },
+  {
+    "sku": "METALCAUCHO_16100",
+    "price_brutto": 444.84
+  },
+  {
+    "sku": "VIKA_16100120301",
+    "price_brutto": 926.29
+  },
+  {
+    "sku": "VIKA_16100279001",
+    "price_brutto": 987.57
+  },
+  {
+    "sku": "A.B.S._16101",
+    "price_brutto": 1488.68
+  },
+  {
+    "sku": "FAE_16101",
+    "price_brutto": 599.0
+  },
+  {
+    "sku": "A.B.S._16102",
+    "price_brutto": 2142.6
+  },
+  {
+    "sku": "FAE_16102",
+    "price_brutto": 902.18
+  },
+  {
+    "sku": "A.B.S._16103",
+    "price_brutto": 1272.54
+  },
+  {
+    "sku": "FAE_16103",
+    "price_brutto": 770.97
+  },
+  {
+    "sku": "A.B.S._16104",
+    "price_brutto": 684.7
+  },
+  {
+    "sku": "FAE_16104",
+    "price_brutto": 902.92
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16104",
+    "price_brutto": 130.35
+  },
+  {
+    "sku": "FAE_16105",
+    "price_brutto": 962.28
+  },
+  {
+    "sku": "A.B.S._16106",
+    "price_brutto": 2410.22
+  },
+  {
+    "sku": "FAE_16106",
+    "price_brutto": 875.15
+  },
+  {
+    "sku": "SWAG_16 10 6817",
+    "price_brutto": 781.76
+  },
+  {
+    "sku": "A.B.S._16107",
+    "price_brutto": 2590.06
+  },
+  {
+    "sku": "FAE_16107",
+    "price_brutto": 736.23
+  },
+  {
+    "sku": "FEBI BILSTEIN_16107",
+    "price_brutto": 557.73
+  },
+  {
+    "sku": "A.B.S._16108",
+    "price_brutto": 1472.52
+  },
+  {
+    "sku": "FAE_16108",
+    "price_brutto": 790.32
+  },
+  {
+    "sku": "VAN WEZEL_1610807",
+    "price_brutto": 1932.15
+  },
+  {
+    "sku": "A.B.S._16109",
+    "price_brutto": 4043.86
+  },
+  {
+    "sku": "FAE_16109",
+    "price_brutto": 1021.38
+  },
+  {
+    "sku": "FEBI BILSTEIN_16109",
+    "price_brutto": 806.71
+  },
+  {
+    "sku": "JAPKO_1610909",
+    "price_brutto": 1787.75
+  },
+  {
+    "sku": "JAPKO_1610917",
+    "price_brutto": 1787.75
+  },
+  {
+    "sku": "A.B.S._1610Q",
+    "price_brutto": 138.35
+  },
+  {
+    "sku": "LIQUI MOLY_1611",
+    "price_brutto": 334.44
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1611",
+    "price_brutto": 68.18
+  },
+  {
+    "sku": "FEBEST_1611-164FLH",
+    "price_brutto": 1504.24
+  },
+  {
+    "sku": "FEBEST_1611-164R",
+    "price_brutto": 3027.03
+  },
+  {
+    "sku": "FEBEST_1611-164SHA",
+    "price_brutto": 1752.76
+  },
+  {
+    "sku": "FEBEST_1611-169CVTLH",
+    "price_brutto": 1589.23
+  },
+  {
+    "sku": "FEBEST_1611-169CVTRH",
+    "price_brutto": 3135.58
+  },
+  {
+    "sku": "FEBEST_1611-204LH",
+    "price_brutto": 3306.22
+  },
+  {
+    "sku": "FEBEST_1611-204R",
+    "price_brutto": 2103.04
+  },
+  {
+    "sku": "FEBEST_1611-210LH",
+    "price_brutto": 2215.14
+  },
+  {
+    "sku": "FEBEST_1611-211LH",
+    "price_brutto": 1978.83
+  },
+  {
+    "sku": "FEBEST_1611-211RH",
+    "price_brutto": 2026.84
+  },
+  {
+    "sku": "FEBEST_1611-220LH",
+    "price_brutto": 1138.96
+  },
+  {
+    "sku": "FEBEST_1611-221FRH",
+    "price_brutto": 4178.86
+  },
+  {
+    "sku": "FEBEST_1611-246RH",
+    "price_brutto": 2394.89
+  },
+  {
+    "sku": "FEBEST_1611-251RH",
+    "price_brutto": 2920.49
+  },
+  {
+    "sku": "FEBEST_1611-639",
+    "price_brutto": 1810.97
+  },
+  {
+    "sku": "A.B.S._16110",
+    "price_brutto": 2881.8
+  },
+  {
+    "sku": "FEBEST_16110-001R",
+    "price_brutto": 10807.61
+  },
+  {
+    "sku": "VIKA_16110085301",
+    "price_brutto": 510.73
+  },
+  {
+    "sku": "A.B.S._16111",
+    "price_brutto": 1132.9
+  },
+  {
+    "sku": "FAE_16111",
+    "price_brutto": 613.96
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16111",
+    "price_brutto": 591.06
+  },
+  {
+    "sku": "A.B.S._16112",
+    "price_brutto": 2594.68
+  },
+  {
+    "sku": "MONROE_16112",
+    "price_brutto": 1403.47
+  },
+  {
+    "sku": "A.B.S._16113",
+    "price_brutto": 1826.26
+  },
+  {
+    "sku": "FAE_16113",
+    "price_brutto": 990.71
+  },
+  {
+    "sku": "A.B.S._16114",
+    "price_brutto": 1524.72
+  },
+  {
+    "sku": "FAE_16114",
+    "price_brutto": 1523.37
+  },
+  {
+    "sku": "FEBI BILSTEIN_16114",
+    "price_brutto": 446.54
+  },
+  {
+    "sku": "A.B.S._16115",
+    "price_brutto": 3247.48
+  },
+  {
+    "sku": "FAE_16116",
+    "price_brutto": 711.88
+  },
+  {
+    "sku": "A.B.S._16117",
+    "price_brutto": 923.9
+  },
+  {
+    "sku": "FAE_16118",
+    "price_brutto": 1033.83
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16118",
+    "price_brutto": 595.58
+  },
+  {
+    "sku": "A.B.S._1611Q",
+    "price_brutto": 109.65
+  },
+  {
+    "sku": "LIQUI MOLY_1612",
+    "price_brutto": 180.52
+  },
+  {
+    "sku": "FEBEST_1612-211LH",
+    "price_brutto": 1685.66
+  },
+  {
+    "sku": "FEBEST_1612-222",
+    "price_brutto": 4020.61
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16121",
+    "price_brutto": 704.97
+  },
+  {
+    "sku": "FAE_16122",
+    "price_brutto": 961.27
+  },
+  {
+    "sku": "A.B.S._16123",
+    "price_brutto": 658.32
+  },
+  {
+    "sku": "FAE_16123",
+    "price_brutto": 1044.13
+  },
+  {
+    "sku": "AJUSA_16123600",
+    "price_brutto": 33.3
+  },
+  {
+    "sku": "MONROE_16125",
+    "price_brutto": 1599.83
+  },
+  {
+    "sku": "A.B.S._16126",
+    "price_brutto": 1093.0
+  },
+  {
+    "sku": "FEBI BILSTEIN_16127",
+    "price_brutto": 277.68
+  },
+  {
+    "sku": "VAN WEZEL_1612838",
+    "price_brutto": 471.29
+  },
+  {
+    "sku": "LIQUI MOLY_1613",
+    "price_brutto": 345.16
+  },
+  {
+    "sku": "A.B.S._16131",
+    "price_brutto": 3983.02
+  },
+  {
+    "sku": "FAE_16133",
+    "price_brutto": 804.03
+  },
+  {
+    "sku": "FEBI BILSTEIN_16133",
+    "price_brutto": 314.51
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16133",
+    "price_brutto": 345.61
+  },
+  {
+    "sku": "A.B.S._16134",
+    "price_brutto": 1290.36
+  },
+  {
+    "sku": "FEBI BILSTEIN_16134",
+    "price_brutto": 374.26
+  },
+  {
+    "sku": "METALCAUCHO_16134",
+    "price_brutto": 326.86
+  },
+  {
+    "sku": "A.B.S._16135",
+    "price_brutto": 1554.72
+  },
+  {
+    "sku": "FEBI BILSTEIN_16135",
+    "price_brutto": 342.07
+  },
+  {
+    "sku": "A.B.S._16136",
+    "price_brutto": 1623.94
+  },
+  {
+    "sku": "FAE_16137",
+    "price_brutto": 1040.95
+  },
+  {
+    "sku": "A.B.S._16138",
+    "price_brutto": 1183.62
+  },
+  {
+    "sku": "JP GROUP_1613800100",
+    "price_brutto": 198.85
+  },
+  {
+    "sku": "A.B.S._16139",
+    "price_brutto": 1088.28
+  },
+  {
+    "sku": "A.B.S._1613Q",
+    "price_brutto": 89.09
+  },
+  {
+    "sku": "FEBEST_1614-210LH",
+    "price_brutto": 3374.09
+  },
+  {
+    "sku": "FEBEST_1614-211RH",
+    "price_brutto": 4044.69
+  },
+  {
+    "sku": "FEBEST_1614-639",
+    "price_brutto": 8980.43
+  },
+  {
+    "sku": "FAE_16140",
+    "price_brutto": 809.87
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16140",
+    "price_brutto": 119.23
+  },
+  {
+    "sku": "A.B.S._16141",
+    "price_brutto": 1122.76
+  },
+  {
+    "sku": "FEBI BILSTEIN_16141",
+    "price_brutto": 376.3
+  },
+  {
+    "sku": "METALCAUCHO_16141",
+    "price_brutto": 907.72
+  },
+  {
+    "sku": "A.B.S._16143",
+    "price_brutto": 1242.46
+  },
+  {
+    "sku": "FAE_16143",
+    "price_brutto": 692.31
+  },
+  {
+    "sku": "FAE_16144",
+    "price_brutto": 1017.28
+  },
+  {
+    "sku": "FEBI BILSTEIN_16144",
+    "price_brutto": 364.34
+  },
+  {
+    "sku": "HART_161 440",
+    "price_brutto": 294.38
+  },
+  {
+    "sku": "A.B.S._16145",
+    "price_brutto": 647.78
+  },
+  {
+    "sku": "FAE_16145",
+    "price_brutto": 1239.21
+  },
+  {
+    "sku": "FEBI BILSTEIN_16146",
+    "price_brutto": 345.45
+  },
+  {
+    "sku": "A.B.S._16147",
+    "price_brutto": 829.12
+  },
+  {
+    "sku": "FAE_16147",
+    "price_brutto": 889.5
+  },
+  {
+    "sku": "FEBI BILSTEIN_16147",
+    "price_brutto": 371.45
+  },
+  {
+    "sku": "A.B.S._16148",
+    "price_brutto": 961.74
+  },
+  {
+    "sku": "FAE_16148",
+    "price_brutto": 1022.37
+  },
+  {
+    "sku": "A.B.S._16149",
+    "price_brutto": 997.88
+  },
+  {
+    "sku": "FAE_16149",
+    "price_brutto": 1062.07
+  },
+  {
+    "sku": "A.B.S._1614Q",
+    "price_brutto": 112.24
+  },
+  {
+    "sku": "FEBEST_1615-164SA",
+    "price_brutto": 1035.2
+  },
+  {
+    "sku": "FEBEST_1615-203",
+    "price_brutto": 426.94
+  },
+  {
+    "sku": "FEBEST_1615-210",
+    "price_brutto": 315.4
+  },
+  {
+    "sku": "FEBEST_1615-G463SA",
+    "price_brutto": 881.57
+  },
+  {
+    "sku": "A.B.S._16150",
+    "price_brutto": 966.16
+  },
+  {
+    "sku": "FAE_16150",
+    "price_brutto": 1376.34
+  },
+  {
+    "sku": "A.B.S._16151",
+    "price_brutto": 904.92
+  },
+  {
+    "sku": "MONROE_16151",
+    "price_brutto": 1772.99
+  },
+  {
+    "sku": "A.B.S._16152",
+    "price_brutto": 1088.28
+  },
+  {
+    "sku": "FEBI BILSTEIN_16152",
+    "price_brutto": 358.11
+  },
+  {
+    "sku": "JP GROUP_1615200100",
+    "price_brutto": 2164.93
+  },
+  {
+    "sku": "SASIC_1615205",
+    "price_brutto": 149.56
+  },
+  {
+    "sku": "A.B.S._16153",
+    "price_brutto": 1405.52
+  },
+  {
+    "sku": "FEBI BILSTEIN_16153",
+    "price_brutto": 321.8
+  },
+  {
+    "sku": "A.B.S._16154",
+    "price_brutto": 1544.58
+  },
+  {
+    "sku": "FEBI BILSTEIN_16154",
+    "price_brutto": 341.67
+  },
+  {
+    "sku": "A.B.S._16155",
+    "price_brutto": 2072.7
+  },
+  {
+    "sku": "FAE_16155",
+    "price_brutto": 971.91
+  },
+  {
+    "sku": "FEBI BILSTEIN_16155",
+    "price_brutto": 253.15
+  },
+  {
+    "sku": "A.B.S._16156",
+    "price_brutto": 572.36
+  },
+  {
+    "sku": "A.B.S._16157",
+    "price_brutto": 1088.32
+  },
+  {
+    "sku": "FAE_16157",
+    "price_brutto": 807.21
+  },
+  {
+    "sku": "KILEN_16157",
+    "price_brutto": 1199.26
+  },
+  {
+    "sku": "A.B.S._16158",
+    "price_brutto": 2336.64
+  },
+  {
+    "sku": "FEBI BILSTEIN_16158",
+    "price_brutto": 394.03
+  },
+  {
+    "sku": "A.B.S._16159",
+    "price_brutto": 1876.26
+  },
+  {
+    "sku": "FEBI BILSTEIN_16159",
+    "price_brutto": 604.8
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16159",
+    "price_brutto": 210.72
+  },
+  {
+    "sku": "FEBEST_1615P-164FLH",
+    "price_brutto": 568.48
+  },
+  {
+    "sku": "FEBEST_1615P-164LH",
+    "price_brutto": 647.52
+  },
+  {
+    "sku": "FEBEST_1615P-169",
+    "price_brutto": 531.26
+  },
+  {
+    "sku": "FEBEST_1615P-220",
+    "price_brutto": 405.94
+  },
+  {
+    "sku": "FEBEST_1615P-221",
+    "price_brutto": 602.65
+  },
+  {
+    "sku": "FEBEST_1615P-251",
+    "price_brutto": 428.74
+  },
+  {
+    "sku": "FEBEST_1615P-639SA",
+    "price_brutto": 557.77
+  },
+  {
+    "sku": "A.B.S._1615Q",
+    "price_brutto": 86.52
+  },
+  {
+    "sku": "FEBEST_1616-169",
+    "price_brutto": 632.69
+  },
+  {
+    "sku": "FEBEST_1616-221",
+    "price_brutto": 572.93
+  },
+  {
+    "sku": "FEBI BILSTEIN_16160",
+    "price_brutto": 583.44
+  },
+  {
+    "sku": "A.B.S._16161",
+    "price_brutto": 958.4
+  },
+  {
+    "sku": "FAE_16162",
+    "price_brutto": 907.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16162",
+    "price_brutto": 513.91
+  },
+  {
+    "sku": "A.B.S._16163",
+    "price_brutto": 1546.14
+  },
+  {
+    "sku": "A.B.S._16164",
+    "price_brutto": 1200.58
+  },
+  {
+    "sku": "FEBI BILSTEIN_16164",
+    "price_brutto": 672.77
+  },
+  {
+    "sku": "MONROE_16164",
+    "price_brutto": 1365.71
+  },
+  {
+    "sku": "A.B.S._16167",
+    "price_brutto": 1861.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16167",
+    "price_brutto": 347.52
+  },
+  {
+    "sku": "METALCAUCHO_16167",
+    "price_brutto": 642.99
+  },
+  {
+    "sku": "A.B.S._16168",
+    "price_brutto": 1351.64
+  },
+  {
+    "sku": "FEBI BILSTEIN_16168",
+    "price_brutto": 397.86
+  },
+  {
+    "sku": "A.B.S._16169",
+    "price_brutto": 765.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16169",
+    "price_brutto": 368.18
+  },
+  {
+    "sku": "LIQUI MOLY_1617",
+    "price_brutto": 185.1
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1617",
+    "price_brutto": 141.85
+  },
+  {
+    "sku": "A.B.S._16171",
+    "price_brutto": 1619.32
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16171",
+    "price_brutto": 80.87
+  },
+  {
+    "sku": "A.B.S._16172",
+    "price_brutto": 1267.18
+  },
+  {
+    "sku": "FEBI BILSTEIN_16172",
+    "price_brutto": 428.93
+  },
+  {
+    "sku": "A.B.S._16173",
+    "price_brutto": 1810.0
+  },
+  {
+    "sku": "FEBI BILSTEIN_16173",
+    "price_brutto": 346.22
+  },
+  {
+    "sku": "A.B.S._16174",
+    "price_brutto": 804.4
+  },
+  {
+    "sku": "FEBI BILSTEIN_16175",
+    "price_brutto": 521.12
+  },
+  {
+    "sku": "FEBI BILSTEIN_16176",
+    "price_brutto": 364.73
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16177",
+    "price_brutto": 254.89
+  },
+  {
+    "sku": "A.B.S._16178",
+    "price_brutto": 2096.1
+  },
+  {
+    "sku": "A.B.S._16179",
+    "price_brutto": 926.5
+  },
+  {
+    "sku": "FEBEST_1617P-163",
+    "price_brutto": 421.38
+  },
+  {
+    "sku": "FEBEST_1617P-164",
+    "price_brutto": 689.61
+  },
+  {
+    "sku": "FEBEST_1617P-164S",
+    "price_brutto": 612.25
+  },
+  {
+    "sku": "FEBEST_1617P-203",
+    "price_brutto": 349.84
+  },
+  {
+    "sku": "FEBEST_1617P-211R-KIT",
+    "price_brutto": 419.93
+  },
+  {
+    "sku": "FEBEST_1617P-212R",
+    "price_brutto": 541.93
+  },
+  {
+    "sku": "FEBEST_1617P-221",
+    "price_brutto": 528.37
+  },
+  {
+    "sku": "A.B.S._1617Q",
+    "price_brutto": 70.83
+  },
+  {
+    "sku": "LIQUI MOLY_1618",
+    "price_brutto": 304.44
+  },
+  {
+    "sku": "MASTER-SPORT GERMANY_1618/1-LF-PCS-MS",
+    "price_brutto": 47.24
+  },
+  {
+    "sku": "A.B.S._16180",
+    "price_brutto": 814.16
+  },
+  {
+    "sku": "A.B.S._16181",
+    "price_brutto": 1211.64
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16181",
+    "price_brutto": 225.88
+  },
+  {
+    "sku": "JP GROUP_1618100100",
+    "price_brutto": 113.73
+  },
+  {
+    "sku": "JP GROUP_1618100200",
+    "price_brutto": 179.13
+  },
+  {
+    "sku": "JP GROUP_1618100300",
+    "price_brutto": 211.27
+  },
+  {
+    "sku": "A.B.S._16182",
+    "price_brutto": 1160.94
+  },
+  {
+    "sku": "A.B.S._16183",
+    "price_brutto": 1160.0
+  },
+  {
+    "sku": "A.B.S._16185",
+    "price_brutto": 1357.18
+  },
+  {
+    "sku": "A.B.S._16186",
+    "price_brutto": 1320.66
+  },
+  {
+    "sku": "METALCAUCHO_16186",
+    "price_brutto": 512.22
+  },
+  {
+    "sku": "JP GROUP_1618601500",
+    "price_brutto": 268.79
+  },
+  {
+    "sku": "A.B.S._16187",
+    "price_brutto": 626.4
+  },
+  {
+    "sku": "A.B.S._16188",
+    "price_brutto": 1037.52
+  },
+  {
+    "sku": "METALCAUCHO_16188",
+    "price_brutto": 816.86
+  },
+  {
+    "sku": "FEBI BILSTEIN_16189",
+    "price_brutto": 321.8
+  },
+  {
+    "sku": "A.B.S._1618Q",
+    "price_brutto": 116.57
+  },
+  {
+    "sku": "LIQUI MOLY_1619",
+    "price_brutto": 371.73
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1619",
+    "price_brutto": 103.5
+  },
+  {
+    "sku": "A.B.S._16190",
+    "price_brutto": 977.58
+  },
+  {
+    "sku": "FEBI BILSTEIN_16190",
+    "price_brutto": 386.3
+  },
+  {
+    "sku": "A.B.S._16191",
+    "price_brutto": 1017.24
+  },
+  {
+    "sku": "FEBI BILSTEIN_16191",
+    "price_brutto": 322.29
+  },
+  {
+    "sku": "A.B.S._16192",
+    "price_brutto": 849.04
+  },
+  {
+    "sku": "FEBI BILSTEIN_16192",
+    "price_brutto": 342.97
+  },
+  {
+    "sku": "FEBI BILSTEIN_16193",
+    "price_brutto": 430.51
+  },
+  {
+    "sku": "A.B.S._16194",
+    "price_brutto": 1015.78
+  },
+  {
+    "sku": "FEBI BILSTEIN_16194",
+    "price_brutto": 351.77
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16194",
+    "price_brutto": 594.99
+  },
+  {
+    "sku": "A.B.S._16195",
+    "price_brutto": 1158.88
+  },
+  {
+    "sku": "FEBI BILSTEIN_16195",
+    "price_brutto": 315.96
+  },
+  {
+    "sku": "METALCAUCHO_16195",
+    "price_brutto": 533.92
+  },
+  {
+    "sku": "A.B.S._16196",
+    "price_brutto": 1198.94
+  },
+  {
+    "sku": "FEBI BILSTEIN_16196",
+    "price_brutto": 386.3
+  },
+  {
+    "sku": "FEBI BILSTEIN_16197",
+    "price_brutto": 396.79
+  },
+  {
+    "sku": "A.B.S._16198",
+    "price_brutto": 2208.62
+  },
+  {
+    "sku": "FEBI BILSTEIN_16198",
+    "price_brutto": 390.45
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16198",
+    "price_brutto": 191.74
+  },
+  {
+    "sku": "A.B.S._16199",
+    "price_brutto": 1909.22
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16199",
+    "price_brutto": 715.0
+  },
+  {
+    "sku": "A.B.S._1619Q",
+    "price_brutto": 139.91
+  },
+  {
+    "sku": "CAFFARO_162-00",
+    "price_brutto": 193.08
+  },
+  {
+    "sku": "KS TOOLS_162.0114",
+    "price_brutto": 612.11
+  },
+  {
+    "sku": "KS TOOLS_162.0405",
+    "price_brutto": 258.95
+  },
+  {
+    "sku": "ELRING_162.441",
+    "price_brutto": 61.4
+  },
+  {
+    "sku": "ELRING_162.451",
+    "price_brutto": 195.85
+  },
+  {
+    "sku": "ELRING_162.483",
+    "price_brutto": 798.74
+  },
+  {
+    "sku": "ELRING_162.832",
+    "price_brutto": 738.04
+  },
+  {
+    "sku": "ELRING_162.880",
+    "price_brutto": 477.08
+  },
+  {
+    "sku": "ELRING_162.910",
+    "price_brutto": 597.04
+  },
+  {
+    "sku": "ELRING_162.950",
+    "price_brutto": 431.01
+  },
+  {
+    "sku": "ELRING_162.960",
+    "price_brutto": 431.01
+  },
+  {
+    "sku": "BREMI_162/66",
+    "price_brutto": 230.73
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1620",
+    "price_brutto": 72.11
+  },
+  {
+    "sku": "FEBEST_1620-164F",
+    "price_brutto": 398.96
+  },
+  {
+    "sku": "FEBEST_1620-164R",
+    "price_brutto": 535.14
+  },
+  {
+    "sku": "FEBEST_1620-209",
+    "price_brutto": 377.07
+  },
+  {
+    "sku": "FEBEST_1620-211LF",
+    "price_brutto": 241.97
+  },
+  {
+    "sku": "FEBEST_1620-211LOF",
+    "price_brutto": 370.06
+  },
+  {
+    "sku": "FEBEST_1620-211UF",
+    "price_brutto": 386.29
+  },
+  {
+    "sku": "FEBEST_1620-212F",
+    "price_brutto": 543.81
+  },
+  {
+    "sku": "FEBEST_1620-463LF",
+    "price_brutto": 3344.32
+  },
+  {
+    "sku": "3RG_16200",
+    "price_brutto": 3618.69
+  },
+  {
+    "sku": "A.B.S._16200",
+    "price_brutto": 1313.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16200",
+    "price_brutto": 588.54
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16200",
+    "price_brutto": 1147.87
+  },
+  {
+    "sku": "SASIC_1620041",
+    "price_brutto": 1880.18
+  },
+  {
+    "sku": "A.B.S._16201",
+    "price_brutto": 1198.56
+  },
+  {
+    "sku": "FEBI BILSTEIN_16201",
+    "price_brutto": 421.32
+  },
+  {
+    "sku": "METALCAUCHO_16201",
+    "price_brutto": 259.61
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16201",
+    "price_brutto": 255.48
+  },
+  {
+    "sku": "LEMFORDER_16201 02",
+    "price_brutto": 266.63
+  },
+  {
+    "sku": "A.B.S._16202",
+    "price_brutto": 1405.88
+  },
+  {
+    "sku": "FEBI BILSTEIN_16202",
+    "price_brutto": 437.73
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16202",
+    "price_brutto": 826.57
+  },
+  {
+    "sku": "FEBI BILSTEIN_16203",
+    "price_brutto": 288.56
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16203",
+    "price_brutto": 463.27
+  },
+  {
+    "sku": "A.B.S._16204",
+    "price_brutto": 1209.64
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16204",
+    "price_brutto": 418.89
+  },
+  {
+    "sku": "A.B.S._16205",
+    "price_brutto": 2473.04
+  },
+  {
+    "sku": "A.B.S._16206",
+    "price_brutto": 850.68
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16206",
+    "price_brutto": 337.23
+  },
+  {
+    "sku": "LEMFORDER_16206 01",
+    "price_brutto": 642.26
+  },
+  {
+    "sku": "A.B.S._16207",
+    "price_brutto": 953.24
+  },
+  {
+    "sku": "FEBI BILSTEIN_16207",
+    "price_brutto": 456.13
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16207",
+    "price_brutto": 374.52
+  },
+  {
+    "sku": "A.B.S._16208",
+    "price_brutto": 2006.84
+  },
+  {
+    "sku": "VAN WEZEL_1620803",
+    "price_brutto": 458.29
+  },
+  {
+    "sku": "VAN WEZEL_1620804",
+    "price_brutto": 712.5
+  },
+  {
+    "sku": "VAN WEZEL_1620831",
+    "price_brutto": 77.06
+  },
+  {
+    "sku": "VAN WEZEL_1620832",
+    "price_brutto": 104.73
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16209",
+    "price_brutto": 435.12
+  },
+  {
+    "sku": "A.B.S._1620Q",
+    "price_brutto": 93.24
+  },
+  {
+    "sku": "LIQUI MOLY_1621",
+    "price_brutto": 446.4
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1621",
+    "price_brutto": 342.84
+  },
+  {
+    "sku": "FEBEST_1621-C205LH",
+    "price_brutto": 688.25
+  },
+  {
+    "sku": "FEBEST_1621-C205RH",
+    "price_brutto": 688.25
+  },
+  {
+    "sku": "FEBI BILSTEIN_16210",
+    "price_brutto": 488.67
+  },
+  {
+    "sku": "A.B.S._16211",
+    "price_brutto": 831.14
+  },
+  {
+    "sku": "FEBI BILSTEIN_16211",
+    "price_brutto": 515.19
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16211",
+    "price_brutto": 247.74
+  },
+  {
+    "sku": "A.B.S._16212",
+    "price_brutto": 612.18
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16212",
+    "price_brutto": 303.89
+  },
+  {
+    "sku": "A.B.S._16213",
+    "price_brutto": 1358.86
+  },
+  {
+    "sku": "FEBI BILSTEIN_16213",
+    "price_brutto": 427.25
+  },
+  {
+    "sku": "A.B.S._16214",
+    "price_brutto": 841.66
+  },
+  {
+    "sku": "FEBI BILSTEIN_16214",
+    "price_brutto": 514.69
+  },
+  {
+    "sku": "A.B.S._16215",
+    "price_brutto": 919.12
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16215",
+    "price_brutto": 138.72
+  },
+  {
+    "sku": "A.B.S._16216",
+    "price_brutto": 992.16
+  },
+  {
+    "sku": "A.B.S._16217",
+    "price_brutto": 1258.7
+  },
+  {
+    "sku": "FEBI BILSTEIN_16217",
+    "price_brutto": 663.87
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16217",
+    "price_brutto": 95.13
+  },
+  {
+    "sku": "A.B.S._16218",
+    "price_brutto": 929.08
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16218",
+    "price_brutto": 205.21
+  },
+  {
+    "sku": "A.B.S._16219",
+    "price_brutto": 1629.82
+  },
+  {
+    "sku": "FEBI BILSTEIN_16219",
+    "price_brutto": 343.36
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16219",
+    "price_brutto": 271.81
+  },
+  {
+    "sku": "A.B.S._1621Q",
+    "price_brutto": 254.14
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1622",
+    "price_brutto": 337.64
+  },
+  {
+    "sku": "FEBEST_1622-164",
+    "price_brutto": 349.84
+  },
+  {
+    "sku": "FEBEST_1622-166",
+    "price_brutto": 299.96
+  },
+  {
+    "sku": "FEBEST_1622-211",
+    "price_brutto": 379.29
+  },
+  {
+    "sku": "A.B.S._16220",
+    "price_brutto": 1385.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16220",
+    "price_brutto": 415.68
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16220",
+    "price_brutto": 371.18
+  },
+  {
+    "sku": "A.B.S._16221",
+    "price_brutto": 1326.76
+  },
+  {
+    "sku": "FEBI BILSTEIN_16221",
+    "price_brutto": 615.02
+  },
+  {
+    "sku": "A.B.S._16222",
+    "price_brutto": 1211.64
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16222",
+    "price_brutto": 102.61
+  },
+  {
+    "sku": "METALCAUCHO_16223",
+    "price_brutto": 1790.67
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16223",
+    "price_brutto": 733.21
+  },
+  {
+    "sku": "FEBI BILSTEIN_16224",
+    "price_brutto": 663.27
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16224",
+    "price_brutto": 722.78
+  },
+  {
+    "sku": "A.B.S._16225",
+    "price_brutto": 973.9
+  },
+  {
+    "sku": "FEBI BILSTEIN_16225",
+    "price_brutto": 502.13
+  },
+  {
+    "sku": "METALCAUCHO_16225",
+    "price_brutto": 207.95
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16225",
+    "price_brutto": 534.59
+  },
+  {
+    "sku": "A.B.S._16226",
+    "price_brutto": 1919.78
+  },
+  {
+    "sku": "MONROE_16226",
+    "price_brutto": 1661.06
+  },
+  {
+    "sku": "A.B.S._16227",
+    "price_brutto": 1574.12
+  },
+  {
+    "sku": "HART_162 277",
+    "price_brutto": 3070.96
+  },
+  {
+    "sku": "A.B.S._16228",
+    "price_brutto": 2015.6
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16228",
+    "price_brutto": 607.98
+  },
+  {
+    "sku": "A.B.S._16229",
+    "price_brutto": 930.92
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16229",
+    "price_brutto": 221.94
+  },
+  {
+    "sku": "A.B.S._1622Q",
+    "price_brutto": 77.28
+  },
+  {
+    "sku": "LIQUI MOLY_1623",
+    "price_brutto": 1623.45
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1623",
+    "price_brutto": 97.11
+  },
+  {
+    "sku": "FEBEST_1623-001",
+    "price_brutto": 217.31
+  },
+  {
+    "sku": "FEBEST_1623-002RR",
+    "price_brutto": 417.88
+  },
+  {
+    "sku": "FEBEST_1623-156F",
+    "price_brutto": 238.91
+  },
+  {
+    "sku": "FEBEST_1623-164F",
+    "price_brutto": 264.42
+  },
+  {
+    "sku": "FEBEST_1623-164R",
+    "price_brutto": 234.08
+  },
+  {
+    "sku": "FEBEST_1623-166FL",
+    "price_brutto": 449.94
+  },
+  {
+    "sku": "FEBEST_1623-166FR",
+    "price_brutto": 489.16
+  },
+  {
+    "sku": "FEBEST_1623-169F",
+    "price_brutto": 212.54
+  },
+  {
+    "sku": "FEBEST_1623-176R",
+    "price_brutto": 389.06
+  },
+  {
+    "sku": "FEBEST_1623-203F",
+    "price_brutto": 405.05
+  },
+  {
+    "sku": "FEBEST_1623-207RH",
+    "price_brutto": 234.6
+  },
+  {
+    "sku": "FEBEST_1623-209LH",
+    "price_brutto": 208.87
+  },
+  {
+    "sku": "FEBEST_1623-209RH",
+    "price_brutto": 176.54
+  },
+  {
+    "sku": "FEBEST_1623-211FL",
+    "price_brutto": 887.32
+  },
+  {
+    "sku": "FEBEST_1623-211FR",
+    "price_brutto": 876.88
+  },
+  {
+    "sku": "FEBEST_1623-211R",
+    "price_brutto": 405.94
+  },
+  {
+    "sku": "FEBEST_1623-R172R",
+    "price_brutto": 340.07
+  },
+  {
+    "sku": "FEBEST_1623-W222FLH",
+    "price_brutto": 576.16
+  },
+  {
+    "sku": "FEBEST_1623-W222FRH",
+    "price_brutto": 588.15
+  },
+  {
+    "sku": "A.B.S._16230",
+    "price_brutto": 1603.3
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16230",
+    "price_brutto": 279.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16231",
+    "price_brutto": 257.41
+  },
+  {
+    "sku": "A.B.S._16232",
+    "price_brutto": 1302.04
+  },
+  {
+    "sku": "FEBI BILSTEIN_16232",
+    "price_brutto": 480.67
+  },
+  {
+    "sku": "FEBI BILSTEIN_16233",
+    "price_brutto": 476.52
+  },
+  {
+    "sku": "A.B.S._16234",
+    "price_brutto": 841.66
+  },
+  {
+    "sku": "FEBI BILSTEIN_16234",
+    "price_brutto": 598.19
+  },
+  {
+    "sku": "A.B.S._16235",
+    "price_brutto": 1880.08
+  },
+  {
+    "sku": "A.B.S._16236",
+    "price_brutto": 1477.26
+  },
+  {
+    "sku": "FEBI BILSTEIN_16236",
+    "price_brutto": 294.1
+  },
+  {
+    "sku": "A.B.S._16237",
+    "price_brutto": 1031.46
+  },
+  {
+    "sku": "FEBI BILSTEIN_16237",
+    "price_brutto": 506.28
+  },
+  {
+    "sku": "A.B.S._16238",
+    "price_brutto": 1395.88
+  },
+  {
+    "sku": "FEBI BILSTEIN_16238",
+    "price_brutto": 472.26
+  },
+  {
+    "sku": "A.B.S._16239",
+    "price_brutto": 1008.78
+  },
+  {
+    "sku": "FEBI BILSTEIN_16239",
+    "price_brutto": 565.82
+  },
+  {
+    "sku": "A.B.S._1623Q",
+    "price_brutto": 137.23
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1624",
+    "price_brutto": 92.38
+  },
+  {
+    "sku": "FEBEST_1624-164UFL",
+    "price_brutto": 2421.56
+  },
+  {
+    "sku": "FEBEST_1624-164UFR",
+    "price_brutto": 2139.83
+  },
+  {
+    "sku": "FEBEST_1624-166FUPL",
+    "price_brutto": 2706.07
+  },
+  {
+    "sku": "FEBEST_1624-166FUPR",
+    "price_brutto": 2531.43
+  },
+  {
+    "sku": "FEBEST_1624-176FRH",
+    "price_brutto": 6427.45
+  },
+  {
+    "sku": "FEBEST_1624-204FLFR",
+    "price_brutto": 2116.48
+  },
+  {
+    "sku": "FEBEST_1624-204FLRL",
+    "price_brutto": 1750.09
+  },
+  {
+    "sku": "FEBEST_1624-204FLRR",
+    "price_brutto": 1750.09
+  },
+  {
+    "sku": "FEBEST_1624-205FLFL",
+    "price_brutto": 2262.24
+  },
+  {
+    "sku": "FEBEST_1624-205FLFR",
+    "price_brutto": 2262.24
+  },
+  {
+    "sku": "FEBEST_1624-205FLRL",
+    "price_brutto": 3150.35
+  },
+  {
+    "sku": "FEBEST_1624-205FLRR",
+    "price_brutto": 3150.35
+  },
+  {
+    "sku": "FEBEST_1624-205FUPL",
+    "price_brutto": 3015.8
+  },
+  {
+    "sku": "FEBEST_1624-205FUPR",
+    "price_brutto": 3015.8
+  },
+  {
+    "sku": "FEBEST_1624-211FLFL",
+    "price_brutto": 2174.03
+  },
+  {
+    "sku": "FEBEST_1624-211FLFR",
+    "price_brutto": 2174.03
+  },
+  {
+    "sku": "FEBEST_1624-212FLFL",
+    "price_brutto": 2661.19
+  },
+  {
+    "sku": "FEBEST_1624-212FLFR",
+    "price_brutto": 2237.91
+  },
+  {
+    "sku": "FEBI BILSTEIN_16240",
+    "price_brutto": 716.5
+  },
+  {
+    "sku": "SASIC_1624058",
+    "price_brutto": 1106.4
+  },
+  {
+    "sku": "A.B.S._16241",
+    "price_brutto": 1198.94
+  },
+  {
+    "sku": "MONROE_16242",
+    "price_brutto": 1133.9
+  },
+  {
+    "sku": "VAN WEZEL_1624227",
+    "price_brutto": 361.55
+  },
+  {
+    "sku": "VAN WEZEL_1624228",
+    "price_brutto": 361.55
+  },
+  {
+    "sku": "VAN WEZEL_1624261",
+    "price_brutto": 672.63
+  },
+  {
+    "sku": "VAN WEZEL_1624263",
+    "price_brutto": 411.39
+  },
+  {
+    "sku": "VAN WEZEL_1624264",
+    "price_brutto": 425.74
+  },
+  {
+    "sku": "FEBI BILSTEIN_16243",
+    "price_brutto": 375.02
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16243",
+    "price_brutto": 309.89
+  },
+  {
+    "sku": "LEMFORDER_16243 01",
+    "price_brutto": 1434.16
+  },
+  {
+    "sku": "A.B.S._16244",
+    "price_brutto": 661.26
+  },
+  {
+    "sku": "FEBI BILSTEIN_16244",
+    "price_brutto": 489.04
+  },
+  {
+    "sku": "MONROE_16244",
+    "price_brutto": 1877.61
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16244",
+    "price_brutto": 341.96
+  },
+  {
+    "sku": "A.B.S._16245",
+    "price_brutto": 1541.58
+  },
+  {
+    "sku": "METALCAUCHO_16245",
+    "price_brutto": 402.68
+  },
+  {
+    "sku": "MONROE_16245",
+    "price_brutto": 1877.61
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16245",
+    "price_brutto": 480.68
+  },
+  {
+    "sku": "VAN WEZEL_1624510",
+    "price_brutto": 373.95
+  },
+  {
+    "sku": "A.B.S._16246",
+    "price_brutto": 1435.96
+  },
+  {
+    "sku": "FEBI BILSTEIN_16246",
+    "price_brutto": 480.28
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16246",
+    "price_brutto": 339.31
+  },
+  {
+    "sku": "FEBI BILSTEIN_16247",
+    "price_brutto": 581.37
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16247",
+    "price_brutto": 1247.13
+  },
+  {
+    "sku": "A.B.S._16248",
+    "price_brutto": 1636.98
+  },
+  {
+    "sku": "VAN WEZEL_1624805",
+    "price_brutto": 1187.49
+  },
+  {
+    "sku": "VAN WEZEL_1624806",
+    "price_brutto": 1193.28
+  },
+  {
+    "sku": "VAN WEZEL_1624831",
+    "price_brutto": 96.67
+  },
+  {
+    "sku": "VAN WEZEL_1624832",
+    "price_brutto": 208.56
+  },
+  {
+    "sku": "VAN WEZEL_1624837",
+    "price_brutto": 330.21
+  },
+  {
+    "sku": "VAN WEZEL_1624838",
+    "price_brutto": 163.62
+  },
+  {
+    "sku": "A.B.S._16249",
+    "price_brutto": 795.92
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16249",
+    "price_brutto": 529.07
+  },
+  {
+    "sku": "LIQUI MOLY_1625",
+    "price_brutto": 387.86
+  },
+  {
+    "sku": "FEBEST_1625-204F",
+    "price_brutto": 1938.51
+  },
+  {
+    "sku": "FEBEST_1625-204FLH",
+    "price_brutto": 1841.74
+  },
+  {
+    "sku": "FEBEST_1625-204FRH",
+    "price_brutto": 1841.74
+  },
+  {
+    "sku": "FEBEST_1625-212R",
+    "price_brutto": 647.59
+  },
+  {
+    "sku": "FEBI BILSTEIN_16250",
+    "price_brutto": 643.68
+  },
+  {
+    "sku": "A.B.S._16251",
+    "price_brutto": 1933.8
+  },
+  {
+    "sku": "FEBI BILSTEIN_16251",
+    "price_brutto": 622.23
+  },
+  {
+    "sku": "A.B.S._16252",
+    "price_brutto": 2664.8
+  },
+  {
+    "sku": "A.B.S._16253",
+    "price_brutto": 1685.7
+  },
+  {
+    "sku": "A.B.S._16254",
+    "price_brutto": 2560.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16255",
+    "price_brutto": 363.05
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16256",
+    "price_brutto": 301.56
+  },
+  {
+    "sku": "FEBI BILSTEIN_16257",
+    "price_brutto": 463.35
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16257",
+    "price_brutto": 577.77
+  },
+  {
+    "sku": "A.B.S._16259",
+    "price_brutto": 2674.1
+  },
+  {
+    "sku": "FEBI BILSTEIN_16259",
+    "price_brutto": 400.24
+  },
+  {
+    "sku": "A.B.S._1625Q",
+    "price_brutto": 93.61
+  },
+  {
+    "sku": "A.B.S._16260",
+    "price_brutto": 2134.74
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16260",
+    "price_brutto": 290.31
+  },
+  {
+    "sku": "SASIC_1626044",
+    "price_brutto": 1116.16
+  },
+  {
+    "sku": "SASIC_1626071",
+    "price_brutto": 1654.29
+  },
+  {
+    "sku": "SASIC_1626078",
+    "price_brutto": 1060.69
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16261",
+    "price_brutto": 234.63
+  },
+  {
+    "sku": "JP GROUP_1626100570",
+    "price_brutto": 10843.07
+  },
+  {
+    "sku": "SASIC_1626103",
+    "price_brutto": 1474.74
+  },
+  {
+    "sku": "SASIC_1626110",
+    "price_brutto": 2661.73
+  },
+  {
+    "sku": "SASIC_1626114",
+    "price_brutto": 1661.58
+  },
+  {
+    "sku": "SASIC_1626145",
+    "price_brutto": 1418.4
+  },
+  {
+    "sku": "SASIC_1626149",
+    "price_brutto": 1208.99
+  },
+  {
+    "sku": "SASIC_1626167",
+    "price_brutto": 1260.58
+  },
+  {
+    "sku": "SASIC_1626182",
+    "price_brutto": 1519.38
+  },
+  {
+    "sku": "SASIC_1626199",
+    "price_brutto": 1127.08
+  },
+  {
+    "sku": "A.B.S._16262",
+    "price_brutto": 1645.12
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16262",
+    "price_brutto": 1324.35
+  },
+  {
+    "sku": "A.B.S._16263",
+    "price_brutto": 1535.0
+  },
+  {
+    "sku": "A.B.S._16264",
+    "price_brutto": 1308.14
+  },
+  {
+    "sku": "FEBI BILSTEIN_16264",
+    "price_brutto": 588.54
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16264",
+    "price_brutto": 1224.11
+  },
+  {
+    "sku": "A.B.S._16265",
+    "price_brutto": 1403.5
+  },
+  {
+    "sku": "FEBI BILSTEIN_16265",
+    "price_brutto": 522.4
+  },
+  {
+    "sku": "FEBI BILSTEIN_16267",
+    "price_brutto": 412.35
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16267",
+    "price_brutto": 486.27
+  },
+  {
+    "sku": "FEBI BILSTEIN_16268",
+    "price_brutto": 503.74
+  },
+  {
+    "sku": "FEBI BILSTEIN_16269",
+    "price_brutto": 286.47
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16270",
+    "price_brutto": 377.86
+  },
+  {
+    "sku": "A.B.S._16271",
+    "price_brutto": 791.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16272",
+    "price_brutto": 387.57
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16272",
+    "price_brutto": 83.94
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16273",
+    "price_brutto": 156.28
+  },
+  {
+    "sku": "A.B.S._16274",
+    "price_brutto": 1152.06
+  },
+  {
+    "sku": "FEBI BILSTEIN_16274",
+    "price_brutto": 373.25
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16274",
+    "price_brutto": 378.18
+  },
+  {
+    "sku": "FEBI BILSTEIN_16275",
+    "price_brutto": 534.19
+  },
+  {
+    "sku": "A.B.S._16277",
+    "price_brutto": 1200.58
+  },
+  {
+    "sku": "A.B.S._16278",
+    "price_brutto": 1374.44
+  },
+  {
+    "sku": "A.B.S._16279",
+    "price_brutto": 1287.46
+  },
+  {
+    "sku": "FEBI BILSTEIN_16279",
+    "price_brutto": 482.75
+  },
+  {
+    "sku": "A.B.S._1627Q",
+    "price_brutto": 73.87
+  },
+  {
+    "sku": "FEBI BILSTEIN_16280",
+    "price_brutto": 519.45
+  },
+  {
+    "sku": "MONROE_16282",
+    "price_brutto": 1257.31
+  },
+  {
+    "sku": "A.B.S._16283",
+    "price_brutto": 1285.44
+  },
+  {
+    "sku": "MONROE_16283",
+    "price_brutto": 1257.31
+  },
+  {
+    "sku": "A.B.S._16286",
+    "price_brutto": 873.02
+  },
+  {
+    "sku": "A.B.S._16286C",
+    "price_brutto": 2022.5
+  },
+  {
+    "sku": "A.B.S._16287",
+    "price_brutto": 1164.44
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16287",
+    "price_brutto": 364.99
+  },
+  {
+    "sku": "A.B.S._16288",
+    "price_brutto": 1618.38
+  },
+  {
+    "sku": "A.B.S._16289",
+    "price_brutto": 1035.14
+  },
+  {
+    "sku": "FEBI BILSTEIN_16289",
+    "price_brutto": 1687.14
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16289",
+    "price_brutto": 662.74
+  },
+  {
+    "sku": "FEBEST_1629-163-KIT",
+    "price_brutto": 509.37
+  },
+  {
+    "sku": "FEBEST_1629-164",
+    "price_brutto": 140.54
+  },
+  {
+    "sku": "FEBEST_1629-164-KIT",
+    "price_brutto": 165.42
+  },
+  {
+    "sku": "FEBEST_1629-166-KIT",
+    "price_brutto": 342.84
+  },
+  {
+    "sku": "FEBEST_1629-204",
+    "price_brutto": 127.54
+  },
+  {
+    "sku": "FEBEST_1629-212-KIT",
+    "price_brutto": 329.14
+  },
+  {
+    "sku": "FEBEST_1629-220",
+    "price_brutto": 192.44
+  },
+  {
+    "sku": "A.B.S._16290",
+    "price_brutto": 1294.84
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16290",
+    "price_brutto": 4005.78
+  },
+  {
+    "sku": "A.B.S._16291",
+    "price_brutto": 1560.82
+  },
+  {
+    "sku": "FEBI BILSTEIN_16291",
+    "price_brutto": 315.26
+  },
+  {
+    "sku": "A.B.S._16292",
+    "price_brutto": 1588.12
+  },
+  {
+    "sku": "A.B.S._16293",
+    "price_brutto": 928.9
+  },
+  {
+    "sku": "FEBI BILSTEIN_16293",
+    "price_brutto": 615.02
+  },
+  {
+    "sku": "A.B.S._16294",
+    "price_brutto": 917.08
+  },
+  {
+    "sku": "FEBI BILSTEIN_16295",
+    "price_brutto": 713.42
+  },
+  {
+    "sku": "MONROE_16296",
+    "price_brutto": 1186.28
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_16296",
+    "price_brutto": 554.14
+  },
+  {
+    "sku": "A.B.S._16297",
+    "price_brutto": 1527.26
+  },
+  {
+    "sku": "A.B.S._16298",
+    "price_brutto": 920.4
+  },
+  {
+    "sku": "FEBI BILSTEIN_16298",
+    "price_brutto": 514.69
+  },
+  {
+    "sku": "LEMFORDER_16298 03",
+    "price_brutto": 328.38
+  },
+  {
+    "sku": "VAN WEZEL_1629838",
+    "price_brutto": 215.31
+  },
+  {
+    "sku": "A.B.S._16299",
+    "price_brutto": 677.12
+  },
+  {
+    "sku": "FEBI BILSTEIN_16299",
+    "price_brutto": 343.36
+  },
+  {
+    "sku": "CAFFARO_163-00",
+    "price_brutto": 192.98
+  },
+  {
+    "sku": "HAZET_163-407/35",
+    "price_brutto": 20546.88
+  },
+  {
+    "sku": "HAZET_163-490/60",
+    "price_brutto": 14327.15
+  },
+  {
+    "sku": "HAZET_163-611/10",
+    "price_brutto": 23362.51
+  },
+  {
+    "sku": "HAZET_163-612/40",
+    "price_brutto": 23419.78
+  },
+  {
+    "sku": "ELRING_163.520",
+    "price_brutto": 296.1
+  },
+  {
+    "sku": "ELRING_163.820",
+    "price_brutto": 489.45
+  },
+  {
+    "sku": "FEBI BILSTEIN_16300",
+    "price_brutto": 367.3
+  },
+  {
+    "sku": "A.B.S._16301",
+    "price_brutto": 1137.5
+  },
+  {
+    "sku": "FEBI BILSTEIN_16301",
+    "price_brutto": 305.68
+  },
+  {
+    "sku": "FEBI BILSTEIN_16302",
+    "price_brutto": 493.33
+  },
+  {
+    "sku": "SASIC_1630210",
+    "price_brutto": 16.56
+  },
+  {
+    "sku": "FEBI BILSTEIN_16303",
+    "price_brutto": 431.01
+  },
+  {
+    "sku": "A.B.S._16304",
+    "price_brutto": 1996.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16304",
+    "price_brutto": 518.16
+  },
+  {
+    "sku": "A.B.S._16305",
+    "price_brutto": 1106.16
+  },
+  {
+    "sku": "FEBI BILSTEIN_16305",
+    "price_brutto": 454.95
+  },
+  {
+    "sku": "FEBI BILSTEIN_16306",
+    "price_brutto": 678.32
+  },
+  {
+    "sku": "MONROE_16306",
+    "price_brutto": 1124.15
+  },
+  {
+    "sku": "FEBI BILSTEIN_16308",
+    "price_brutto": 449.01
+  },
+  {
+    "sku": "A.B.S._1630Q",
+    "price_brutto": 79.69
+  },
+  {
+    "sku": "A.B.S._16310",
+    "price_brutto": 1223.26
+  },
+  {
+    "sku": "METALCAUCHO_16311",
+    "price_brutto": 762.42
+  },
+  {
+    "sku": "LEMFORDER_16312 01",
+    "price_brutto": 373.59
+  },
+  {
+    "sku": "A.B.S._16313",
+    "price_brutto": 795.92
+  },
+  {
+    "sku": "FEBI BILSTEIN_16316",
+    "price_brutto": 735.26
+  },
+  {
+    "sku": "METALCAUCHO_16317",
+    "price_brutto": 38.1
+  },
+  {
+    "sku": "FEBI BILSTEIN_16318",
+    "price_brutto": 436.85
+  },
+  {
+    "sku": "A.B.S._1631Q",
+    "price_brutto": 133.81
+  },
+  {
+    "sku": "A.B.S._16321",
+    "price_brutto": 1109.36
+  },
+  {
+    "sku": "FEBI BILSTEIN_16323",
+    "price_brutto": 453.27
+  },
+  {
+    "sku": "A.B.S._16324",
+    "price_brutto": 657.58
+  },
+  {
+    "sku": "A.B.S._16325",
+    "price_brutto": 1098.42
+  },
+  {
+    "sku": "FEBI BILSTEIN_16325",
+    "price_brutto": 397.35
+  },
+  {
+    "sku": "FEBI BILSTEIN_16327",
+    "price_brutto": 392.63
+  },
+  {
+    "sku": "A.B.S._16328",
+    "price_brutto": 2088.54
+  },
+  {
+    "sku": "FEBI BILSTEIN_16328",
+    "price_brutto": 460.48
+  },
+  {
+    "sku": "A.B.S._16329",
+    "price_brutto": 1158.36
+  },
+  {
+    "sku": "A.B.S._1632Q",
+    "price_brutto": 145.9
+  },
+  {
+    "sku": "A.B.S._16330",
+    "price_brutto": 3881.56
+  },
+  {
+    "sku": "A.B.S._16331",
+    "price_brutto": 2042.8
+  },
+  {
+    "sku": "A.B.S._16332",
+    "price_brutto": 1540.52
+  },
+  {
+    "sku": "A.B.S._16334",
+    "price_brutto": 2941.54
+  },
+  {
+    "sku": "FEBI BILSTEIN_16334",
+    "price_brutto": 617.88
+  },
+  {
+    "sku": "A.B.S._16335",
+    "price_brutto": 2948.52
+  },
+  {
+    "sku": "A.B.S._16336",
+    "price_brutto": 2154.28
+  },
+  {
+    "sku": "FEBI BILSTEIN_16336",
+    "price_brutto": 431.4
+  },
+  {
+    "sku": "A.B.S._16338",
+    "price_brutto": 1098.42
+  },
+  {
+    "sku": "FEBI BILSTEIN_16338",
+    "price_brutto": 592.17
+  },
+  {
+    "sku": "A.B.S._16339",
+    "price_brutto": 1281.36
+  },
+  {
+    "sku": "A.B.S._1633Q",
+    "price_brutto": 56.72
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1634",
+    "price_brutto": 67.38
+  },
+  {
+    "sku": "A.B.S._16340",
+    "price_brutto": 1417.68
+  },
+  {
+    "sku": "FEBI BILSTEIN_16340",
+    "price_brutto": 606.99
+  },
+  {
+    "sku": "A.B.S._16341",
+    "price_brutto": 1201.86
+  },
+  {
+    "sku": "FEBI BILSTEIN_16341",
+    "price_brutto": 312.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16343",
+    "price_brutto": 536.36
+  },
+  {
+    "sku": "FEBI BILSTEIN_16345",
+    "price_brutto": 725.39
+  },
+  {
+    "sku": "FEBI BILSTEIN_16349",
+    "price_brutto": 583.44
+  },
+  {
+    "sku": "A.B.S._1634Q",
+    "price_brutto": 99.51
+  },
+  {
+    "sku": "A.B.S._16350",
+    "price_brutto": 4689.6
+  },
+  {
+    "sku": "A.B.S._16351",
+    "price_brutto": 1331.72
+  },
+  {
+    "sku": "A.B.S._16353",
+    "price_brutto": 1951.72
+  },
+  {
+    "sku": "FEBI BILSTEIN_16353",
+    "price_brutto": 536.36
+  },
+  {
+    "sku": "FEBI BILSTEIN_16354",
+    "price_brutto": 454.95
+  },
+  {
+    "sku": "FEBI BILSTEIN_16355",
+    "price_brutto": 467.62
+  },
+  {
+    "sku": "A.B.S._16359",
+    "price_brutto": 4763.98
+  },
+  {
+    "sku": "FEBI BILSTEIN_16359",
+    "price_brutto": 657.79
+  },
+  {
+    "sku": "A.B.S._1635Q",
+    "price_brutto": 115.39
+  },
+  {
+    "sku": "A.B.S._16360",
+    "price_brutto": 1818.42
+  },
+  {
+    "sku": "FEBI BILSTEIN_16360",
+    "price_brutto": 427.25
+  },
+  {
+    "sku": "MONROE_16361",
+    "price_brutto": 1685.7
+  },
+  {
+    "sku": "A.B.S._16362",
+    "price_brutto": 1718.86
+  },
+  {
+    "sku": "MONROE_16362",
+    "price_brutto": 1685.7
+  },
+  {
+    "sku": "A.B.S._16364",
+    "price_brutto": 2886.24
+  },
+  {
+    "sku": "FEBI BILSTEIN_16364",
+    "price_brutto": 514.69
+  },
+  {
+    "sku": "FEBI BILSTEIN_16366",
+    "price_brutto": 1072.9
+  },
+  {
+    "sku": "A.B.S._16368",
+    "price_brutto": 4437.4
+  },
+  {
+    "sku": "VAN WEZEL_1636830",
+    "price_brutto": 115.56
+  },
+  {
+    "sku": "VAN WEZEL_1636839",
+    "price_brutto": 279.44
+  },
+  {
+    "sku": "FEBI BILSTEIN_16369",
+    "price_brutto": 747.49
+  },
+  {
+    "sku": "HUTCHINSON_1636 K 6",
+    "price_brutto": 317.63
+  },
+  {
+    "sku": "A.B.S._1636Q",
+    "price_brutto": 185.47
+  },
+  {
+    "sku": "FEBI BILSTEIN_16370",
+    "price_brutto": 398.85
+  },
+  {
+    "sku": "FEBI BILSTEIN_16371",
+    "price_brutto": 630.3
+  },
+  {
+    "sku": "FEBI BILSTEIN_16372",
+    "price_brutto": 601.17
+  },
+  {
+    "sku": "FEBI BILSTEIN_16373",
+    "price_brutto": 548.39
+  },
+  {
+    "sku": "A.B.S._16375",
+    "price_brutto": 749.6
+  },
+  {
+    "sku": "VAN WEZEL_1637591",
+    "price_brutto": 428.8
+  },
+  {
+    "sku": "VAN WEZEL_1637592",
+    "price_brutto": 321.19
+  },
+  {
+    "sku": "A.B.S._16378",
+    "price_brutto": 5045.78
+  },
+  {
+    "sku": "FEBI BILSTEIN_16378",
+    "price_brutto": 607.75
+  },
+  {
+    "sku": "LEMFORDER_16379 01",
+    "price_brutto": 375.11
+  },
+  {
+    "sku": "A.B.S._1637Q",
+    "price_brutto": 225.34
+  },
+  {
+    "sku": "ORIGINAL IMPERIUM_1638",
+    "price_brutto": 114.12
+  },
+  {
+    "sku": "A.B.S._16380",
+    "price_brutto": 5817.66
+  },
+  {
+    "sku": "LEMFORDER_16380 01",
+    "price_brutto": 375.11
+  },
+  {
+    "sku": "FEBI BILSTEIN_16381",
+    "price_brutto": 502.63
+  },
+  {
+    "sku": "MONROE_16381",
+    "price_brutto": 1119.84
+  },
+  {
+    "sku": "FEBI BILSTEIN_16382",
+    "price_brutto": 545.61
+  },
+  {
+    "sku": "MONROE_16382",
+    "price_brutto": 1092.51
+  },
+  {
+    "sku": "FEBI BILSTEIN_16383",
+    "price_brutto": 442.39
+  },
+  {
+    "sku": "FEBI BILSTEIN_16386",
+    "price_brutto": 393.92
+  },
+  {
+    "sku": "FEBI BILSTEIN_16387",
+    "price_brutto": 517.34
+  },
+  {
+    "sku": "A.B.S._16388",
+    "price_brutto": 1639.94
+  },
+  {
+    "sku": "FEBI BILSTEIN_16388",
+    "price_brutto": 459.2
+  },
+  {
+    "sku": "VAN WEZEL_1638807",
+    "price_brutto": 2753.1
+  },
+  {
+    "sku": "VAN WEZEL_1638831",
+    "price_brutto": 324.61
+  },
+  {
+    "sku": "VAN WEZEL_1638832",
+    "price_brutto": 322.9
+  },
+  {
+    "sku": "VAN WEZEL_1638838",
+    "price_brutto": 318.91
+  },
+  {
+    "sku": "FEBI BILSTEIN_16389",
+    "price_brutto": 407.76
+  },
+  {
+    "sku": "A.B.S._1638Q",
+    "price_brutto": 191.37
+  },
+  {
+    "sku": "A.B.S._16390",
+    "price_brutto": 4898.66
+  },
+  {
+    "sku": "LEMFORDER_16390 02",
+    "price_brutto": 695.59
+  },
+  {
+    "sku": "FEBI BILSTEIN_16391",
+    "price_brutto": 804.13
+  },
+  {
+    "sku": "FEBI BILSTEIN_16393",
+    "price_brutto": 386.3
+  },
+  {
+    "sku": "A.B.S._16394",
+    "price_brutto": 2873.78
+  },
+  {
+    "sku": "FEBI BILSTEIN_16394",
+    "price_brutto": 385.9
+  },
+  {
+    "sku": "FEBI BILSTEIN_16398",
+    "price_brutto": 603.74
+  },
+  {
+    "sku": "FEBI BILSTEIN_16399",
+    "price_brutto": 431.4
+  },
+  {
+    "sku": "A.B.S._1639Q",
+    "price_brutto": 151.43
+  },
+  {
+    "sku": "CAFFARO_164-20",
+    "price_brutto": 241.06
+  },
+  {
+    "sku": "ELRING_164.241",
+    "price_brutto": 275.07
+  },
+  {
+    "sku": "ELRING_164.261",
+    "price_brutto": 257.82
+  },
+  {
+    "sku": "ELRING_164.271",
+    "price_brutto": 281.91
+  },
+  {
+    "sku": "ELRING_164.341",
+    "price_brutto": 606.14
+  },
+  {
+    "sku": "ELRING_164.841",
+    "price_brutto": 984.38
+  },
+  {
+    "sku": "ELRING_164.861",
+    "price_brutto": 1109.29
+  },
+  {
+    "sku": "ELRING_164.991",
+    "price_brutto": 745.98
+  },
+  {
+    "sku": "LIQUI MOLY_1640",
+    "price_brutto": 439.66
+  },
+  {
+    "sku": "FEBI BILSTEIN_16400",
+    "price_brutto": 416.56
+  },
+  {
+    "sku": "LEMFORDER_16400 02",
+    "price_brutto": 355.59
+  },
+  {
+    "sku": "SASIC_1640020",
+    "price_brutto": 5.21
+  },
+  {
+    "sku": "FEBI BILSTEIN_16401",
+    "price_brutto": 446.92
+  },
+  {
+    "sku": "JP GROUP_1640100500",
+    "price_brutto": 3611.51
+  },
+  {
+    "sku": "JP GROUP_1640100700",
+    "price_brutto": 4140.88
+  },
+  {
+    "sku": "JP GROUP_1640100800",
+    "price_brutto": 2550.1
+  },
+  {
+    "sku": "FEBI BILSTEIN_16402",
+    "price_brutto": 573.76
+  },
+  {
+    "sku": "FEBEST_16402-001",
+    "price_brutto": 128.43
+  },
+  {
+    "sku": "FEBI BILSTEIN_16403",
+    "price_brutto": 456.24
+  },
+  {
+    "sku": "FEBEST_16403-463",
+    "price_brutto": 125.53
+  },
+  {
+    "sku": "JP GROUP_1640400180",
+    "price_brutto": 429.5
+  },
+  {
+    "sku": "FEBI BILSTEIN_16405",
+    "price_brutto": 576.61
+  },
+  {
+    "sku": "SASIC_1640540",
+    "price_brutto": 15.17
+  },
+  {
+    "sku": "MONROE_16406",
+    "price_brutto": 2037.25
+  },
+  {
+    "sku": "FEBI BILSTEIN_16407",
+    "price_brutto": 364.73
+  },
+  {
+    "sku": "FEBI BILSTEIN_16408",
+    "price_brutto": 553.71
+  },
+  {
+    "sku": "A.B.S._1640Q",
+    "price_brutto": 77.48
+  },
+  {
+    "sku": "LIQUI MOLY_1641",
+    "price_brutto": 176.04
+  },
+  {
+    "sku": "FEBI BILSTEIN_16410",
+    "price_brutto": 987.06
+  },
+  {
+    "sku": "MONROE_16411",
+    "price_brutto": 1905.32
+  },
+  {
+    "sku": "A.B.S._16412",
+    "price_brutto": 1679.72
+  },
+  {
+    "sku": "FEBI BILSTEIN_16412",
+    "price_brutto": 581.4
+  },
+  {
+    "sku": "MONROE_16412",
+    "price_brutto": 2031.04
+  },
+  {
+    "sku": "FEBI BILSTEIN_16413",
+    "price_brutto": 470.09
+  },
+  {
+    "sku": "A.B.S._16414",
+    "price_brutto": 1877.7
+  },
+  {
+    "sku": "FEBI BILSTEIN_16414",
+    "price_brutto": 705.62
+  },
+  {
+    "sku": "A.B.S._16416",
+    "price_brutto": 4301.92
+  },
+  {
+    "sku": "FEBI BILSTEIN_16416",
+    "price_brutto": 622.23
+  },
+  {
+    "sku": "MONROE_16416",
+    "price_brutto": 1405.93
+  },
+  {
+    "sku": "FEBI BILSTEIN_16417",
+    "price_brutto": 596.5
+  },
+  {
+    "sku": "MONROE_16417",
+    "price_brutto": 1562.79
+  },
+  {
+    "sku": "FEBI BILSTEIN_16419",
+    "price_brutto": 727.48
+  },
+  {
+    "sku": "FEBI BILSTEIN_16420",
+    "price_brutto": 427.25
+  },
+  {
+    "sku": "FEBI BILSTEIN_16421",
+    "price_brutto": 575.04
+  },
+  {
+    "sku": "3RG_16422",
+    "price_brutto": 1252.28
+  },
+  {
+    "sku": "A.B.S._16422",
+    "price_brutto": 1105.04
+  },
+  {
+    "sku": "FEBI BILSTEIN_16422",
+    "price_brutto": 471.47
+  },
+  {
+    "sku": "FEBI BILSTEIN_16424",
+    "price_brutto": 716.5
+  },
+  {
+    "sku": "FEBI BILSTEIN_16425",
+    "price_brutto": 665.15
+  },
+  {
+    "sku": "FEBI BILSTEIN_16426",
+    "price_brutto": 510.55
+  },
+  {
+    "sku": "FEBI BILSTEIN_16427",
+    "price_brutto": 523.68
+  },
+  {
+    "sku": "FEBI BILSTEIN_16428",
+    "price_brutto": 474.32
+  },
+  {
+    "sku": "FEBI BILSTEIN_16429",
+    "price_brutto": 411.53
+  }
+]

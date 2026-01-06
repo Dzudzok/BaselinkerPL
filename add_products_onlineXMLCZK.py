@@ -12,15 +12,15 @@ from itertools import islice
 API_TOKEN = "3007084-3028072-5KCONQEJOMDU02OJ8U06VM5NWAVBXURMHZ6OF0HVTRQMMGMNWIOF3L171TPYCBV3"  # Wstaw swój token API BaseLinker
 API_URL = "https://api.baselinker.com/connector.php"
 INVENTORY_ID = "bl_1"  # Magazyn BaseLinker (DurczokAPI)
-NEW_INVENTORY_ID = "25060"  # Wstaw poprawny ID nowego katalogu
-PRICE_GROUP_ID = 22769  # ID grupy cenowej CZK (API DurczokCZK)
+NEW_INVENTORY_ID = "53214"  # Wstaw poprawny ID nowego katalogu
+PRICE_GROUP_ID = 46532  # ID grupy cenowej CZK (API DurczokCZK)
 REQUESTS_PER_MINUTE = 450  # Limit dla dodawania produktów
 MAX_WORKERS = 5  # Liczba równoległych wątków
 BATCH_SIZE = REQUESTS_PER_MINUTE  # Partia produktów na minutę
 BATCH_INTERVAL = 60  # Odstęp między partiami (60 sekund)
 DEFAULT_TAX = 23  # Domyślny VAT (23%)
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
-XML_URL = "https://exports.conviu.com/open/u70usd1xo1y5fknhd1xm8kixkdsya8po/writer/lb5423mwbhnc1lw6664gdwzwv09thmjz.xml"  # URL do pliku XML
+XML_URL = "https://exports.conviu.com/open/u70usd1xo1y5fknhd1xm8kixkdsya8po/writer/ciqcxhu8d7sgvbmnhxntf95okkk7bhd6.xml"  # URL do pliku XML
 PAUSE_DURATION = 360  # 12 minut w sekundach
 
 # Konfiguracja logowania
