@@ -160,37 +160,61 @@ def fetch_and_parse_xml() -> List[Dict]:
         namespace = {"g": "http://base.google.com/ns/1.0"}
         
         for item in root.findall(".//item"):
-            price_czk = float(item.find("g:price", namespace).text) if item.find("g:price", namespace) is not None and item.find("g:price", namespace).text.replace(".", "").isdigit() else 0.0
-            mpn = (item.find("g:mpn", namespace).text if item.find("g:mpn", namespace) is not None else "Unknown-MPN").strip()
-            brand = (item.find("g:brand", namespace).text if item.find("g:brand", namespace) is not None else "Unknown-Brand").strip()
-            title = (item.find("title").text if item.find("title") is not None else "Unknown-Title").strip()
+            # Parsowanie ceny
+            price_czk = float(item.find("g:price", namespace).text) if item.find("g:price", namespace) is not None else 0.0
             
+            # Parsowanie MPN (używany jako SKU)
+            mpn_el = item.find("g:mpn", namespace)
+            mpn = (mpn_el.text or "Unknown-MPN").strip() if mpn_el is not None else "Unknown-MPN"
+            
+            # Parsowanie marki
+            brand_el = item.find("g:brand", namespace)
+            brand = (brand_el.text or "Unknown-Brand").strip() if brand_el is not None else "Unknown-Brand"
+            
+            # Parsowanie tytułu - najpierw <title>, jeśli pusty to <description>
+            title_elem = item.find("title")
+            title = (title_elem.text if title_elem is not None and title_elem.text else "").strip()
+            if not title:
+                desc_elem = item.find("description")
+                title = (desc_elem.text if desc_elem is not None and desc_elem.text else "Unknown-Title").strip()
+            
+            # Parsowanie zdjęcia
             img_elem = item.find("g:image_link", namespace)
-            img = img_elem.text.strip() if img_elem is not None and img_elem.text else ""
-            image_link = img
+            image_link = img_elem.text.strip() if img_elem is not None and img_elem.text else ""
             
-            # Formatowanie nazwy w formacie: g:mpn g:brand title
-            formatted_name = f"{mpn} {brand} {title}".strip()
+            # Parsowanie dostępności (stan magazynu) - zawsze jest liczbą
+            quantity = int(item.find("g:availability", namespace).text) if item.find("g:availability", namespace) is not None else 0
             
-            # Logowanie wartości dla debugowania
-            logging.info(f"Parsowanie produktu: SKU={mpn}, MPN={mpn}, Brand={brand}, Title={title}, Sformatowana nazwa={formatted_name}, Image={image_link}")
+            # Parsowanie GTIN - zawsze pojedynczy numer
+            gtin_el = item.find("g:gtin", namespace)
+            ean = (gtin_el.text or "").strip() if gtin_el is not None else ""
+            
+            # Parsowanie kategorii z NX_StockCategory
+            nx_stock_category = (item.find("NX_StockCategory").text if item.find("NX_StockCategory") is not None else "").strip()
+            category = nx_stock_category if nx_stock_category else item.find("g:product_type", namespace).text if item.find("g:product_type", namespace) is not None else ""
+            
+            # Parsowanie ERP ID z g:id (wewnętrzne ID z ERP) - MUSI być z namespace!
+            erp_id = (item.find("g:id", namespace).text if item.find("g:id", namespace) is not None else "").strip()
+            
+            # Formatowanie nazwy w formacie: g:mpn g:title (bez duplikatu marki, bo marka już jest w MPN)
+            formatted_name = f"{mpn} {title}".strip()
+            
             
             product = {
                 "sku": mpn,
-                "name": formatted_name,  # Używamy sformatowanej nazwy
-                "quantity": int(item.find("g:availability", namespace).text) if item.find("g:availability", namespace) is not None and item.find("g:availability", namespace).text.isdigit() else 0,
+                "name": formatted_name,  # Formatowana nazwa bez duplikatu marki
+                "quantity": quantity,
                 "price_brutto": round(price_czk, 2),
-                "ean": item.find("g:gtin", namespace).text if item.find("g:gtin", namespace) is not None else "",
+                "ean": ean,
                 "man_name": brand,
                 "description": item.find("g:description", namespace).text if item.find("g:description", namespace) is not None else "",
-                "category": item.find("g:product_type", namespace).text if item.find("g:product_type", namespace) is not None else "",
-                "image_link": image_link
+                "category": category,
+                "image_link": image_link,
+                "erp_id": erp_id
             }
             
             products.append(product)
-        
-        logging.info(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK) (ograniczone do 1000 dla testów).")
-        print(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK) (ograniczone do 1000 dla testów).")
+
         return products
     except requests.exceptions.RequestException as e:
         logging.error(f"Błąd podczas pobierania XML z URL {XML_URL}: {str(e)}")
@@ -202,13 +226,13 @@ def fetch_and_parse_xml() -> List[Dict]:
         return []
 
 def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, inventory_id: str) -> bool:
-    """Wysyła pojedynczy nowy produkt do BaseLinker przez API (ceny w CZK)."""
+    """Wysyła pojedynczy nowy produkt do BaseLinker przez Storage API (ceny w CZK)."""
     headers = {"X-BLToken": API_TOKEN}
     price_brutto_czk = product["price_brutto"]
     price_wholesale_netto_czk = price_brutto_czk / (1 + DEFAULT_TAX / 100)
+    
     formatted_product = {
         "storage_id": storage_id,
-        "inventory_id": inventory_id,
         "product_id": "0",
         "sku": product["sku"],
         "name": product["name"],
@@ -222,16 +246,21 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
         "category_id": category_id,
         "location": "",
         "weight": 1.0,
-        "price_group_id": PRICE_GROUP_ID,
         "images": {"0": f"url:{product['image_link']}"} if product.get("image_link") else {}
     }
     
-    # Logowanie pełnego payloadu przed wysłaniem
-    logging.info(f"Pełny payload wysyłany do BaseLinker: {json.dumps(formatted_product, ensure_ascii=False)}")
-    print(f"Pełny payload wysyłany do BaseLinker: {json.dumps(formatted_product, ensure_ascii=False)}")
+    # Przygotowanie extra_fields z ERP_ID
+    erp_id = product.get("erp_id", "").strip()
+    if erp_id:
+        try:
+            # Wartość musi być numerem (integer), nie string!
+            erp_id_int = int(erp_id)
+            formatted_product["extra_fields"] = {"9157": erp_id_int}
+        except ValueError:
+            logging.warning(f"ERP_ID '{erp_id}' nie jest liczbą dla SKU {product['sku']}")
     
-    print(f"Wysyłanie produktu: SKU={product['sku']}, Nazwa={product['name']}, Cena brutto (CZK)={price_brutto_czk}, Grupa cenowa={PRICE_GROUP_ID}, Inventory ID={inventory_id}")
-    logging.info(f"Wysyłanie produktu: SKU={product['sku']}, Nazwa={product['name']}, Cena brutto (CZK)={price_brutto_czk}, Grupa cenowa={PRICE_GROUP_ID}, Inventory ID={inventory_id}")
+    # Logowanie pełnego payloadu przed wysłaniem
+    print(f"Wysyłanie produktu: SKU={product['sku']}")
     params = {
         "method": "addProduct",
         "parameters": json.dumps(formatted_product, ensure_ascii=False)
@@ -240,6 +269,9 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
     try:
         response = requests.post(API_URL, headers=headers, data=params)
         response_data = response.json()
+        
+        logging.info(f"Response z API: {json.dumps(response_data, ensure_ascii=False)}")
+        print(f"Response z API: {json.dumps(response_data, ensure_ascii=False)}")
         
         if response_data.get("status") != "SUCCESS":
             error_message = response_data.get("error_message", "Brak szczegółów błędu")
@@ -261,16 +293,18 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
                     print(f"Ponowna próba nieudana dla SKU {product['sku']}: {response_data.get('error_message', 'Brak szczegółów błędu')}")
                     return False
         
-        product_id = str(response_data.get("product_id"))
-        if product_id:
-            sku_to_id_cache[product["sku"]] = product_id
+        # Sprawdź czy product_id istnieje i nie jest None
+        product_id = response_data.get("product_id")
+        if product_id and str(product_id) != "0" and str(product_id).lower() != "none":
+            product_id_str = str(product_id)
+            sku_to_id_cache[product["sku"]] = product_id_str
             save_sku_to_id()
-            logging.info(f"Pomyślnie dodano produkt: SKU={product['sku']}, Product ID={product_id}, Inventory ID={inventory_id}")
-            print(f"Pomyślnie dodano produkt: SKU={product['sku']}, Product ID={product_id}, Inventory ID={inventory_id}")
+            logging.info(f"Pomyślnie dodano produkt: SKU={product['sku']}")
+            print(f"Pomyślnie dodano produkt: SKU={product['sku']}")
             return True
         else:
-            logging.error(f"Brak product_id w odpowiedzi API dla SKU {product['sku']}: {response_data}")
-            print(f"Brak product_id w odpowiedzi API dla SKU {product['sku']}: {response_data}")
+            logging.error(f"Brak product_id lub product_id=None w odpowiedzi API dla SKU {product['sku']}: {response_data}")
+            print(f"Brak product_id lub product_id=None w odpowiedzi API dla SKU {product['sku']}: {response_data}")
             return False
     except Exception as e:
         logging.error(f"Błąd podczas wysyłania żądania (addProduct) dla SKU {product['sku']}: {str(e)}")
@@ -290,7 +324,7 @@ def add_products_from_xml():
     products = fetch_and_parse_xml()
     if not products:
         logging.error("Brak produktów do przetworzenia.")
-        print("Brak produktów do przetworzenia. Sprawdź URL XML.")
+        print("Brak produktów do przetworzenia. Sprawdź URL XML Lub jego składnię.")
         return
     
     new_products = [p for p in products if p["sku"] not in sku_to_id_cache]

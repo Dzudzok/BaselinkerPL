@@ -1,0 +1,28 @@
+XML Nextis>Conviu :
+05:00 / 09:00 / 13:00 / 17:00 / 21:00
+
+
+IMPORT Conviu > XML:
+Každou hodinu v 40 minutu
+
+EXPORT Conviu > XML:
+Každou hodinu v 10 minutu
+
+
+API AKTUALIZACJA CEN : 
+06:30 / 10:30 / 14:30 / 18:30 / 22:30
+
+10:27 = 31086
+10:30 = 32113
+
+ vat 8 23
+FA/F/254/12/2025
+
+Allegro Finance
+
+
+FAZ/F/1930/2025Z
+fk/f/219/12/2025
+FK/f/348/12/2025
+fa/f/982/12/2025
+pg/f/5334/12/2025

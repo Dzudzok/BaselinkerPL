@@ -131,16 +131,52 @@ def fetch_and_parse_xml() -> List[Dict]:
         namespace = {"g": "http://base.google.com/ns/1.0"}
         
         for item in root.findall(".//item"):
-            price_czk = float(item.find("g:price", namespace).text) if item.find("g:price", namespace) is not None and item.find("g:price", namespace).text.replace(".", "").isdigit() else 0.0
+            # Parsowanie ceny
+            price_czk = float(item.find("g:price", namespace).text) if item.find("g:price", namespace) is not None else 0.0
+            
+            # Parsowanie dostępności (stan magazynu) - zawsze jest liczbą
+            quantity = int(item.find("g:availability", namespace).text) if item.find("g:availability", namespace) is not None else 0
+            
+            # Parsowanie GTIN - zawsze pojedynczy numer
+            gtin_el = item.find("g:gtin", namespace)
+            ean = (gtin_el.text or "").strip() if gtin_el is not None else ""
+
+            
+            # Parsowanie kategorii z NX_StockCategory
+            nx_stock_category = (item.find("NX_StockCategory").text if item.find("NX_StockCategory") is not None else "").strip()
+            category = nx_stock_category if nx_stock_category else item.find("g:product_type", namespace).text if item.find("g:product_type", namespace) is not None else ""
+            
+            # Parsowanie ERP ID z g:id (wewnętrzne ID z ERP) - MUSI być z namespace!
+            erp_id = (item.find("g:id", namespace).text if item.find("g:id", namespace) is not None else "").strip()
+            
+            # Parsowanie MPN (jako SKU)
+            mpn_el = item.find("g:mpn", namespace)
+            mpn = (mpn_el.text or "").strip() if mpn_el is not None else ""
+            
+            # Parsowanie tytułu - najpierw <title>, jeśli pusty to <description>
+            title_elem = item.find("title")
+            title = (title_elem.text if title_elem is not None and title_elem.text else "").strip()
+            if not title:
+                desc_elem = item.find("description")
+                title = (desc_elem.text if desc_elem is not None and desc_elem.text else "").strip()
+            
+            # Parsowanie marki
+            brand_el = item.find("g:brand", namespace)
+            brand = (brand_el.text or "").strip() if brand_el is not None else ""
+            
+            # Formatowanie nazwy w formacie: g:mpn g:title
+            formatted_name = f"{mpn} {title}".strip() if mpn and title else (mpn or title or "Unknown Product")
+            
             product = {
-                "sku": item.find("g:mpn", namespace).text if item.find("g:mpn", namespace) is not None else "",
-                "name": item.find("title").text if item.find("title") is not None else "",
-                "quantity": int(item.find("g:availability", namespace).text) if item.find("g:availability", namespace) is not None and item.find("g:availability", namespace).text.isdigit() else 0,
+                "sku": mpn,
+                "name": formatted_name,
+                "quantity": quantity,
                 "price_brutto": round(price_czk, 2),  # Cena już w CZK, zaokrąglona do 2 miejsc
-                "ean": item.find("g:gtin", namespace).text if item.find("g:gtin", namespace) is not None else "",
-                "man_name": item.find("g:brand", namespace).text if item.find("g:brand", namespace) is not None else "",
+                "ean": ean,
+                "man_name": brand,
                 "description": item.find("g:description", namespace).text if item.find("g:description", namespace) is not None else "",
-                "category": item.find("g:product_type", namespace).text if item.find("g:product_type", namespace) is not None else ""
+                "category": category,
+                "erp_id": erp_id
             }
             # Walidacja nazwy produktu
             if not product["name"] or len(product["name"].strip()) < 3:
@@ -251,6 +287,63 @@ def update_product_prices_in_baselinker(products: List[Dict], storage_id: str, s
         print(f"Błąd podczas wysyłania żądania (updateInventoryProductsPrices): {str(e)}")
         return False
 
+#def update_product_text_fields_in_baselinker(products: List[Dict], storage_id: str, sku_to_id: Dict[str, str], inventory_id: str) -> bool:
+    """Aktualizuje extra_fields (ERP_ID) produktów w BaseLinker przez Inventory API."""
+    headers = {"X-BLToken": API_TOKEN}
+    formatted_products = []
+    
+    for product in products:
+        product_id = sku_to_id.get(product["sku"], "0")
+        erp_id = product.get("erp_id", "").strip()
+        
+        # Aktualizuj tylko jeśli produkt istnieje i erp_id nie jest pusty
+        if product_id != "0" and erp_id:
+            try:
+                # Wartość musi być numerem (integer), nie string!
+                erp_id_int = int(erp_id)
+                formatted_product = {
+                    "product_id": int(product_id),
+                    "variant_id": 0,
+                    "extra_fields": {
+                        "9157": erp_id_int  # ID pola z getInventoryExtraFields, wartość jako liczba
+                    }
+                }
+                formatted_products.append(formatted_product)
+                print(f"Aktualizacja ERP_ID produktu: SKU={product['sku']}, Product ID={product_id}, ERP_ID={erp_id_int}")
+                logging.info(f"Aktualizacja ERP_ID produktu: SKU={product['sku']}, Product ID={product_id}, ERP_ID={erp_id_int}")
+            except ValueError:
+                logging.warning(f"ERP_ID '{erp_id}' nie jest liczbą dla SKU {product['sku']}")
+                print(f"ERP_ID '{erp_id}' nie jest liczbą dla SKU {product['sku']}")
+    
+    if not formatted_products:
+        return True  # Brak produktów do aktualizacji
+    
+    params = {
+        "method": "updateInventoryProductsData",
+        "parameters": json.dumps({
+            "storage_id": storage_id,
+            "inventory_id": inventory_id,
+            "products": formatted_products
+        }, ensure_ascii=False)
+    }
+    
+    try:
+        response = requests.post(API_URL, headers=headers, data=params)
+        response_data = response.json()
+        
+        if response_data.get("status") == "SUCCESS":
+            logging.info(f"Pomyślnie zaktualizowano ERP_ID dla {len(formatted_products)} produktów.")
+            print(f"Pomyślnie zaktualizowano ERP_ID dla {len(formatted_products)} produktów.")
+            return True
+        else:
+            logging.error(f"Błąd API (updateInventoryProductsData): {response_data.get('error_message', 'Brak szczegółów błędu')}")
+            print(f"Błąd API (updateInventoryProductsData): {response_data.get('error_message', 'Brak szczegółów błędu')}")
+            return False
+    except Exception as e:
+        logging.error(f"Błąd podczas wysyłania żądania (updateInventoryProductsData): {str(e)}")
+        print(f"Błąd podczas wysyłania żądania (updateInventoryProductsData): {str(e)}")
+        return False
+
 def process_batch(batch: List[Dict], queue: Queue, storage_id: str, sku_to_id: Dict[str, str], inventory_id: str):
     """Przetwarza partię produktów i umieszcza wyniki w kolejce."""
     existing_products = [p for p in batch if p["sku"] in sku_to_id]
@@ -261,7 +354,9 @@ def process_batch(batch: List[Dict], queue: Queue, storage_id: str, sku_to_id: D
         success_quantity = update_product_quantity_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
         # Następnie aktualizacja cen
         success_prices = update_product_prices_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
-        # Zapis wyniku tylko jeśli obie operacje się powiodły
+        # Następnie aktualizacja text_fields (ERP_ID)
+        #success_text_fields = update_product_text_fields_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
+        # Zapis wyniku tylko jeśli wszystkie operacje się powiodły
         success = success_quantity and success_prices
         queue.put((success, existing_products, "update"))
 
@@ -284,7 +379,7 @@ def update_products_from_xml():
     products = fetch_and_parse_xml()
     if not products:
         logging.error("Brak produktów do przetworzenia.")
-        print("Brak produktów do przetworzenia. Sprawdź URL XML.")
+        print("Brak produktów do przetworzenia. Sprawdź URL XML Lub jego składnię.")
         return
     
     # Podział na partie
