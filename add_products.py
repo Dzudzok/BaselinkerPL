@@ -9,6 +9,35 @@ from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor
 from itertools import islice
 from urllib.parse import urlparse
+from typing import Optional, Tuple
+import threading
+from collections import deque
+from concurrent.futures import as_completed
+
+
+class RateLimiter:
+    def __init__(self, per_minute: int):
+        self.per_minute = per_minute
+        self.lock = threading.Lock()
+        self.calls = deque()
+
+    def wait(self):
+        now = time.monotonic()
+        with self.lock:
+            # usuń stare wpisy >60s
+            while self.calls and now - self.calls[0] >= 60:
+                self.calls.popleft()
+
+            if len(self.calls) >= self.per_minute:
+                sleep_for = 60 - (now - self.calls[0])
+            else:
+                sleep_for = 0
+
+        if sleep_for > 0:
+            time.sleep(sleep_for)
+
+        with self.lock:
+            self.calls.append(time.monotonic())
 
 load_dotenv()
 
@@ -25,7 +54,7 @@ BATCH_INTERVAL = 60  # Odstęp między partiami (60 sekund)
 DEFAULT_TAX = 21  # Domyślny VAT (23%)
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
 XML_URL = os.environ.get('XML_URL')  # URL do pliku XML
-PAUSE_DURATION = 360  # 12 minut w sekundach
+PAUSE_DURATION = 360  # 6 minut w sekundach
 
 # Konfiguracja logowania
 logging.basicConfig(
@@ -36,6 +65,19 @@ logging.basicConfig(
 
 # Globalna zmienna do przechowywania bazy SKU-to-ID w pamięci
 sku_to_id_cache = {}
+
+SAFE_RPM = int(REQUESTS_PER_MINUTE * 0.95)  # np. 475 przy 500
+limiter = RateLimiter(SAFE_RPM)
+
+
+thread_local = threading.local()
+
+def get_session():
+    if not hasattr(thread_local, "session"):
+        s = requests.Session()
+        thread_local.session = s
+    return thread_local.session
+
 
 def load_sku_to_id() -> Dict[str, str]:
     """Ładuje mapowanie SKU -> product_id z pliku JSON."""
@@ -52,16 +94,20 @@ def load_sku_to_id() -> Dict[str, str]:
             sku_to_id_cache = {}
     return sku_to_id_cache
 
+
 def save_sku_to_id():
-    """Zapisuje mapowanie SKU -> product_id do pliku JSON."""
     try:
-        with open(SKU_TO_ID_FILE, "w", encoding="utf-8") as f:
-            json.dump(sku_to_id_cache, f, ensure_ascii=False, indent=2)
+        tmp_path = SKU_TO_ID_FILE + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(sku_to_id_cache, f, ensure_ascii=False)  # <-- bez indent
+        os.replace(tmp_path, SKU_TO_ID_FILE)
         logging.info(f"Zapisano bazę SKU-to-ID do pliku: {len(sku_to_id_cache)} rekordów.")
         print(f"Zapisano bazę SKU-to-ID do pliku: {len(sku_to_id_cache)} rekordów.")
     except Exception as e:
         logging.error(f"Błąd podczas zapisywania bazy SKU-to-ID: {str(e)}")
         print(f"Błąd podczas zapisywania bazy SKU-to-ID: {str(e)}")
+
+
 
 def get_valid_storage_id() -> str:
     """Pobiera listę magazynów i sprawdza poprawność INVENTORY_ID."""
@@ -225,7 +271,7 @@ def fetch_and_parse_xml() -> List[Dict]:
         print(f"Błąd podczas parsowania XML: {str(e)}")
         return []
 
-def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, inventory_id: str) -> bool:
+def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, inventory_id: str) -> Optional[Tuple[str, str]]:
     """Wysyła pojedynczy nowy produkt do BaseLinker przez Storage API (ceny w CZK)."""
     headers = {"X-BLToken": API_TOKEN}
     price_brutto_czk = product["price_brutto"]
@@ -259,19 +305,20 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
         except ValueError:
             logging.warning(f"ERP_ID '{erp_id}' nie jest liczbą dla SKU {product['sku']}")
     
-    # Logowanie pełnego payloadu przed wysłaniem
-    print(f"Wysyłanie produktu: SKU={product['sku']}")
+
     params = {
         "method": "addProduct",
         "parameters": json.dumps(formatted_product, ensure_ascii=False)
     }
     
     try:
-        response = requests.post(API_URL, headers=headers, data=params)
+        limiter.wait()
+        session = get_session()
+        response = session.post(API_URL, headers=headers, data=params, timeout=60)
+
         response_data = response.json()
         
-        logging.info(f"Response z API: {json.dumps(response_data, ensure_ascii=False)}")
-        print(f"Response z API: {json.dumps(response_data, ensure_ascii=False)}")
+
         
         if response_data.get("status") != "SUCCESS":
             error_message = response_data.get("error_message", "Brak szczegółów błędu")
@@ -291,24 +338,26 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
                 if response_data.get("status") != "SUCCESS":
                     logging.error(f"Ponowna próba nieudana dla SKU {product['sku']}: {response_data.get('error_message', 'Brak szczegółów błędu')}")
                     print(f"Ponowna próba nieudana dla SKU {product['sku']}: {response_data.get('error_message', 'Brak szczegółów błędu')}")
-                    return False
+                    return None
         
         # Sprawdź czy product_id istnieje i nie jest None
         product_id = response_data.get("product_id")
         if product_id and str(product_id) != "0" and str(product_id).lower() != "none":
             product_id_str = str(product_id)
-            sku_to_id_cache[product["sku"]] = product_id_str
-            save_sku_to_id()
-            logging.info(f"Pomyślnie dodano produkt: SKU={product['sku']}")
-            print(f"Pomyślnie dodano produkt: SKU={product['sku']}")
-            return True
+            logging.info(f"Pomyślnie dodano produkt: SKU={product['sku']} -> ID={product_id_str}")
+            print(f"Pomyślnie dodano produkt: SKU={product['sku']} -> ID={product_id_str}")
+
+            # ✅ zwróć wynik do wątku głównego
+            return (product["sku"], product_id_str)
         else:
             logging.error(f"Brak product_id lub product_id=None w odpowiedzi API dla SKU {product['sku']}: {response_data}")
             print(f"Brak product_id lub product_id=None w odpowiedzi API dla SKU {product['sku']}: {response_data}")
-            return False
+            return None
     except Exception as e:
         logging.error(f"Błąd podczas wysyłania żądania (addProduct) dla SKU {product['sku']}: {str(e)}")
         print(f"Błąd podczas wysyłania żądania (addProduct) dla SKU {product['sku']}: {str(e)}")
+        return None
+
 def add_products_from_xml():
     """Główna funkcja dodawania produktów z pliku XML online (ceny w CZK) z użyciem partii."""
     load_sku_to_id()
@@ -355,21 +404,30 @@ def add_products_from_xml():
                 executor.submit(add_product_to_baselinker, product, storage_id, category_id, NEW_INVENTORY_ID): product
                 for product in batch
             }
-            for future in future_to_product:
-                if not future.result():
-                    failed_products.append(future_to_product[future])
+
+            batch_added = 0
+
+            for future in as_completed(future_to_product):
+                res = future.result()
+                if res is None:
+                    failed_products.append(product)
+                else:
+                    sku, product_id = res
+                    sku_to_id_cache[sku] = product_id
+                    batch_added += 1
+                    if batch_added % 500 == 0:
+                        save_sku_to_id()
+                        print(f"Zapis pośredni: {batch_added} dodanych w partii {batch_number}")
+
+
+
+        # ✅ zapis raz po partii
+        if batch_added > 0:
+            save_sku_to_id()
+            print(f"Partia {batch_number}: dopisano {batch_added} nowych SKU do sku_to_id.json")
+
         
-        # Oblicz czas przetworzenia partii
-        elapsed_time = time.time() - start_time
-        print(f"Partia {batch_number} zakończona w {elapsed_time:.2f} sekund.")
-        logging.info(f"Partia {batch_number} zakończona w {elapsed_time:.2f} sekund.")
-        
-        # Poczekaj do końca minuty, aby zmieścić się w limicie
-        if elapsed_time < BATCH_INTERVAL:
-            sleep_time = BATCH_INTERVAL - elapsed_time
-            print(f"Czekam {sleep_time:.2f} sekund przed następną partią...")
-            logging.info(f"Czekam {sleep_time:.2f} sekund przed następną partią...")
-            time.sleep(sleep_time)
+
         
         batch_number += 1
     
