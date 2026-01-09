@@ -362,6 +362,8 @@ def update_products_from_xml():
     batches = [products[i:i + BATCH_SIZE] for i in range(0, len(products), BATCH_SIZE)]
     logging.info(f"Podzielono na {len(batches)} partii po {BATCH_SIZE} produktów.")
     print(f"Podzielono na {len(batches)} partii po {BATCH_SIZE} produktów.")
+    print(f"START UPDATE: {len(products)} produktów | {len(batches)} batchy")
+
 
     
     failed_products = []
@@ -372,10 +374,17 @@ def update_products_from_xml():
             for batch in batches
         ]
 
-        for fut in futures:
+        total_batches = len(futures)
+
+        for i, fut in enumerate(futures, start=1):
             success, processed_batch = fut.result()
             if not success:
                 failed_products.extend(processed_batch)
+
+            # progress do GUI (co batch)
+            if i % 1 == 0:  # możesz dać np. 2 lub 5 jeśli chcesz mniej printów
+                print(f"[{i}/{total_batches}] UPDATE batch done")
+
     
     # Zapisanie nieudanych produktów do osobnego pliku
     if failed_products:

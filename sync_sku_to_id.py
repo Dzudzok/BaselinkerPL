@@ -123,7 +123,9 @@ def get_products_from_baselinker(storage_id: str) -> Dict[str, str]:
                     current_skus[sku] = product_id
             
             logging.info(f"Pobrano {len(products)} produktów z BaseLinker (strona {page}).")
-            print(f"Pobrano {len(products)} produktów z BaseLinker (strona {page}).")
+            total_loaded = len(current_skus)
+            print(f"[PAGE {page}] Pobrano {len(products)} | Łącznie: {total_loaded}")
+
             page += 1
             time.sleep(SLEEP_TIME)  # Respektowanie limitu 500/min
         except Exception as e:
@@ -132,7 +134,7 @@ def get_products_from_baselinker(storage_id: str) -> Dict[str, str]:
             return current_skus
     
     logging.info(f"Łącznie pobrano {len(current_skus)} produktów z BaseLinker.")
-    print(f"Łącznie pobrano {len(current_skus)} produktów z BaseLinker.")
+    print(f"START SYNC: {len(current_skus)} produktów z BaseLinker")
     return current_skus
 
 def sync_sku_to_id():
@@ -156,13 +158,17 @@ def sync_sku_to_id():
     updated_count = 0
     new_entries = 0
     
-    for sku, product_id in current_products.items():
+    total = len(current_products)
+    for i, (sku, product_id) in enumerate(current_products.items(), start=1):
         if sku not in sku_to_id_cache:
             sku_to_id_cache[sku] = product_id
             new_entries += 1
         elif sku_to_id_cache[sku] != product_id:
             sku_to_id_cache[sku] = product_id
             updated_count += 1
+        if i % 1000 == 0:
+            print(f"[{i}/{total}] SYNC SKU -> ID")
+
     
     # Usuń SKU, które nie istnieją w aktualnej liście z BaseLinker
     removed_count = sum(1 for sku in list(sku_to_id_cache.keys()) if sku not in current_products)
