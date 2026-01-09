@@ -7,8 +7,10 @@ import os
 from dotenv import load_dotenv
 from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor
-from queue import Queue
 from urllib.parse import urlparse
+import threading
+from collections import deque
+
 
 load_dotenv()
 
@@ -17,11 +19,10 @@ API_TOKEN = os.environ.get('API_TOKEN')  # Wstaw swój token API BaseLinker jako
 API_URL = os.environ.get('API_URL')
 INVENTORY_ID = os.environ.get('INVENTORY_ID')  # Poprawny ID magazynu BaseLinker (DurczokAPI), do zmiany na nowy inventory_id
 NEW_INVENTORY_ID = os.environ.get('NEW_INVENTORY_ID')  # Wstaw ID nowego katalogu z add_new_inventory.py
-PRICE_GROUP_ID = os.environ.get('PRICE_GROUP_ID') # ID grupy cenowej CZK (API DurczokCZK)
+PRICE_GROUP_ID = int(os.environ.get('PRICE_GROUP_ID', '0'))
 BATCH_SIZE = 1000  # Optymalizacja dla 1000 produktów na zapytanie
 MAX_WORKERS = int(os.environ.get('MAX_WORKERS', 5))  # Liczba równoległych wątków
 REQUESTS_PER_MINUTE = int(os.environ.get('REQUESTS_PER_MINUTE', 80))
-SLEEP_TIME = 60 / (REQUESTS_PER_MINUTE / MAX_WORKERS)  # Czas między żądaniami dla każdego wątku
 DEFAULT_TAX = 21
 SKU_TO_ID_FILE = "sku_to_id.json"  # Plik do przechowywania mapowania SKU -> product_id
 XML_URL = os.environ.get('XML_URL')  # URL do pliku XML
@@ -35,6 +36,41 @@ logging.basicConfig(
 
 # Globalna zmienna do przechowywania bazy SKU-to-ID w pamięci
 sku_to_id_cache = {}
+
+class RateLimiter:
+    def __init__(self, per_minute: int):
+        self.per_minute = per_minute
+        self.lock = threading.Lock()
+        self.calls = deque()
+
+    def wait(self):
+        now = time.monotonic()
+        with self.lock:
+            while self.calls and now - self.calls[0] >= 60:
+                self.calls.popleft()
+
+            if len(self.calls) >= self.per_minute:
+                sleep_for = 60 - (now - self.calls[0])
+            else:
+                sleep_for = 0
+
+        if sleep_for > 0:
+            time.sleep(sleep_for)
+
+        with self.lock:
+            self.calls.append(time.monotonic())
+
+SAFE_RPM = int(REQUESTS_PER_MINUTE * 0.95)  # np. 475
+limiter = RateLimiter(SAFE_RPM)
+
+thread_local = threading.local()
+
+def get_session():
+    if not hasattr(thread_local, "session"):
+        thread_local.session = requests.Session()
+    return thread_local.session
+
+
 
 def load_sku_to_id() -> Dict[str, str]:
     """Ładuje mapowanie SKU -> product_id z pliku JSON."""
@@ -186,7 +222,6 @@ def fetch_and_parse_xml() -> List[Dict]:
             
             products.append(product)
         
-        logging.info(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK).")
         print(f"Pomyślnie sparsowano {len(products)} produktów z XML online (ceny w CZK).")
         return products
     except requests.exceptions.RequestException as e:
@@ -222,11 +257,12 @@ def update_product_quantity_in_baselinker(products: List[Dict], storage_id: str,
     }
     
     try:
-        response = requests.post(API_URL, headers=headers, data=params)
+        limiter.wait()
+        session = get_session()
+        response = session.post(API_URL, headers=headers, data=params, timeout=60)
         response_data = response.json()
         
         if response_data.get("status") == "SUCCESS":
-            logging.info(f"Pomyślnie zaktualizowano stany {len(formatted_products)} produktów.")
             print(f"Pomyślnie zaktualizowano stany {len(formatted_products)} produktów.")
             return True
         else:
@@ -255,8 +291,6 @@ def update_product_prices_in_baselinker(products: List[Dict], storage_id: str, s
                 "price_group_id": PRICE_GROUP_ID  # Ustawienie grupy cenowej CZK
             }
             formatted_products.append(formatted_product)
-            print(f"Aktualizacja ceny produktu: SKU={product['sku']}, Product ID={product_id}, Cena (CZK)={price_brutto_czk}, Grupa cenowa={PRICE_GROUP_ID}")
-            logging.info(f"Aktualizacja ceny produktu: SKU={product['sku']}, Product ID={product_id}, Cena (CZK)={price_brutto_czk}, Grupa cenowa={PRICE_GROUP_ID}")
     
     if not formatted_products:
         return True  # Brak produktów do aktualizacji
@@ -271,12 +305,13 @@ def update_product_prices_in_baselinker(products: List[Dict], storage_id: str, s
     }
     
     try:
-        response = requests.post(API_URL, headers=headers, data=params)
+        limiter.wait()
+        session = get_session()
+        response = session.post(API_URL, headers=headers, data=params, timeout=60)
+
         response_data = response.json()
         
         if response_data.get("status") == "SUCCESS":
-            logging.info(f"Pomyślnie zaktualizowano ceny {len(formatted_products)} produktów.")
-            print(f"Pomyślnie zaktualizowano ceny {len(formatted_products)} produktów.")
             return True
         else:
             logging.error(f"Błąd API (updateInventoryProductsPrices): {response_data.get('error_message', 'Brak szczegółów błędu')}")
@@ -287,78 +322,19 @@ def update_product_prices_in_baselinker(products: List[Dict], storage_id: str, s
         print(f"Błąd podczas wysyłania żądania (updateInventoryProductsPrices): {str(e)}")
         return False
 
-#def update_product_text_fields_in_baselinker(products: List[Dict], storage_id: str, sku_to_id: Dict[str, str], inventory_id: str) -> bool:
-    """Aktualizuje extra_fields (ERP_ID) produktów w BaseLinker przez Inventory API."""
-    headers = {"X-BLToken": API_TOKEN}
-    formatted_products = []
-    
-    for product in products:
-        product_id = sku_to_id.get(product["sku"], "0")
-        erp_id = product.get("erp_id", "").strip()
-        
-        # Aktualizuj tylko jeśli produkt istnieje i erp_id nie jest pusty
-        if product_id != "0" and erp_id:
-            try:
-                # Wartość musi być numerem (integer), nie string!
-                erp_id_int = int(erp_id)
-                formatted_product = {
-                    "product_id": int(product_id),
-                    "variant_id": 0,
-                    "extra_fields": {
-                        "9157": erp_id_int  # ID pola z getInventoryExtraFields, wartość jako liczba
-                    }
-                }
-                formatted_products.append(formatted_product)
-                print(f"Aktualizacja ERP_ID produktu: SKU={product['sku']}, Product ID={product_id}, ERP_ID={erp_id_int}")
-                logging.info(f"Aktualizacja ERP_ID produktu: SKU={product['sku']}, Product ID={product_id}, ERP_ID={erp_id_int}")
-            except ValueError:
-                logging.warning(f"ERP_ID '{erp_id}' nie jest liczbą dla SKU {product['sku']}")
-                print(f"ERP_ID '{erp_id}' nie jest liczbą dla SKU {product['sku']}")
-    
-    if not formatted_products:
-        return True  # Brak produktów do aktualizacji
-    
-    params = {
-        "method": "updateInventoryProductsData",
-        "parameters": json.dumps({
-            "storage_id": storage_id,
-            "inventory_id": inventory_id,
-            "products": formatted_products
-        }, ensure_ascii=False)
-    }
-    
-    try:
-        response = requests.post(API_URL, headers=headers, data=params)
-        response_data = response.json()
-        
-        if response_data.get("status") == "SUCCESS":
-            logging.info(f"Pomyślnie zaktualizowano ERP_ID dla {len(formatted_products)} produktów.")
-            print(f"Pomyślnie zaktualizowano ERP_ID dla {len(formatted_products)} produktów.")
-            return True
-        else:
-            logging.error(f"Błąd API (updateInventoryProductsData): {response_data.get('error_message', 'Brak szczegółów błędu')}")
-            print(f"Błąd API (updateInventoryProductsData): {response_data.get('error_message', 'Brak szczegółów błędu')}")
-            return False
-    except Exception as e:
-        logging.error(f"Błąd podczas wysyłania żądania (updateInventoryProductsData): {str(e)}")
-        print(f"Błąd podczas wysyłania żądania (updateInventoryProductsData): {str(e)}")
-        return False
 
-def process_batch(batch: List[Dict], queue: Queue, storage_id: str, sku_to_id: Dict[str, str], inventory_id: str):
-    """Przetwarza partię produktów i umieszcza wyniki w kolejce."""
+def process_batch(batch: List[Dict], storage_id: str, sku_to_id: Dict[str, str], inventory_id: str):
     existing_products = [p for p in batch if p["sku"] in sku_to_id]
-    print(f"Przetwarzanie partii ({len(existing_products)} produktów)...")
-    
-    if existing_products:
-        # Najpierw aktualizacja stanów
-        success_quantity = update_product_quantity_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
-        # Następnie aktualizacja cen
-        success_prices = update_product_prices_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
-        # Następnie aktualizacja text_fields (ERP_ID)
-        #success_text_fields = update_product_text_fields_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
-        # Zapis wyniku tylko jeśli wszystkie operacje się powiodły
-        success = success_quantity and success_prices
-        queue.put((success, existing_products, "update"))
+
+    if not existing_products:
+        return (True, [])  # nic do roboty, ale batch "ok"
+
+    success_quantity = update_product_quantity_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
+    success_prices   = update_product_prices_in_baselinker(existing_products, storage_id, sku_to_id, inventory_id)
+
+    success = success_quantity and success_prices
+    return (success, existing_products)
+
 
 def update_products_from_xml():
     """Główna funkcja aktualizacji produktów z pliku XML online (ceny w CZK)."""
@@ -386,24 +362,20 @@ def update_products_from_xml():
     batches = [products[i:i + BATCH_SIZE] for i in range(0, len(products), BATCH_SIZE)]
     logging.info(f"Podzielono na {len(batches)} partii po {BATCH_SIZE} produktów.")
     print(f"Podzielono na {len(batches)} partii po {BATCH_SIZE} produktów.")
+
     
-    # Kolejka do przechowywania wyników
-    result_queue = Queue()
-    
-    # Przetwarzanie partii w wątkach
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        for batch in batches:
-            executor.submit(process_batch, batch, result_queue, storage_id, sku_to_id_cache, NEW_INVENTORY_ID)
-            time.sleep(SLEEP_TIME)
-    
-    # Logowanie wyników
     failed_products = []
-    while not result_queue.empty():
-        success, batch, action = result_queue.get()
-        if not success:
-            failed_products.extend(batch)
-            logging.warning(f"Nieudane {action} dla {len(batch)} produktów.")
-            print(f"Nieudane {action} dla {len(batch)} produktów.")
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = [
+            executor.submit(process_batch, batch, storage_id, sku_to_id_cache, NEW_INVENTORY_ID)
+            for batch in batches
+        ]
+
+        for fut in futures:
+            success, processed_batch = fut.result()
+            if not success:
+                failed_products.extend(processed_batch)
     
     # Zapisanie nieudanych produktów do osobnego pliku
     if failed_products:

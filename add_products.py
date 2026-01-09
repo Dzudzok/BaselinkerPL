@@ -333,7 +333,7 @@ def add_product_to_baselinker(product: Dict, storage_id: str, category_id: str, 
                 print(f"Pauza zakończona. Wznawianie pracy...")
                 logging.info(f"Pauza zakończona. Wznawianie pracy...")
                 # Ponowna próba dodania produktu po odczekaniu
-                response = requests.post(API_URL, headers=headers, data=params)
+                response = session.post(API_URL, headers=headers, data=params, timeout=60)
                 response_data = response.json()
                 if response_data.get("status") != "SUCCESS":
                     logging.error(f"Ponowna próba nieudana dla SKU {product['sku']}: {response_data.get('error_message', 'Brak szczegółów błędu')}")
@@ -408,6 +408,7 @@ def add_products_from_xml():
             batch_added = 0
 
             for future in as_completed(future_to_product):
+                product = future_to_product[future]
                 res = future.result()
                 if res is None:
                     failed_products.append(product)
@@ -415,9 +416,11 @@ def add_products_from_xml():
                     sku, product_id = res
                     sku_to_id_cache[sku] = product_id
                     batch_added += 1
-                    if batch_added % 500 == 0:
+                    
+                    if batch_added % 100 == 0:
                         save_sku_to_id()
                         print(f"Zapis pośredni: {batch_added} dodanych w partii {batch_number}")
+
 
 
 
